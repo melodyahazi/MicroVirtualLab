@@ -1,0 +1,1068 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f1f5f9;
+    color: #172033;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.simulation-navbar {
+    height: 70px;
+    padding: 0 30px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand span {
+    font-size: 28px;
+}
+
+.brand strong {
+    font-size: 20px;
+}
+
+.experiment-title {
+    text-align: center;
+}
+
+.experiment-title span {
+    display: block;
+    color: #1677ff;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.experiment-title strong {
+    font-size: 15px;
+}
+
+.score-display {
+    background: #eef6ff;
+    padding: 8px 18px;
+    border-radius: 8px;
+}
+
+.score-display span {
+    color: #64748b;
+    font-size: 11px;
+    margin-right: 8px;
+}
+
+.score-display strong {
+    color: #1677ff;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.simulation-container {
+    min-height: calc(100vh - 70px);
+    display: grid;
+    grid-template-columns: 320px 1fr;
+}
+
+
+/* =========================
+   INSTRUCTION PANEL
+========================= */
+
+.instruction-panel {
+    background: white;
+    border-right: 1px solid #e5e7eb;
+    padding: 30px 25px;
+}
+
+.simulation-label {
+    color: #1677ff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+.instruction-panel h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+
+/* Progress */
+
+.progress-container {
+    margin-bottom: 25px;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.progress-bar {
+    height: 7px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-value {
+    height: 100%;
+    width: 16.66%;
+    background: #1677ff;
+    transition: width 0.4s ease;
+}
+
+
+/* Instruction */
+
+.instruction-box {
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.instruction-icon {
+    font-size: 25px;
+}
+
+.instruction-label {
+    color: #1677ff;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.instruction-box h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.instruction-box p:last-child {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* Feedback */
+
+.feedback {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.feedback.success {
+    background: #eafaf0;
+    color: #15803d;
+}
+
+.feedback.error {
+    background: #fff1f2;
+    color: #be123c;
+}
+
+
+/* Buttons */
+
+.next-button {
+    width: 100%;
+    padding: 13px;
+    background: #1677ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.next-button:hover {
+    background: #0d5fd1;
+}
+
+.exit-button {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    color: #64748b;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =========================
+   LABORATORY
+========================= */
+
+.laboratory {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* =========================
+   MICROSCOPE AREA
+========================= */
+
+.microscope-area {
+    background: #e2e8f0;
+    border-radius: 20px;
+    min-height: 570px;
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+}
+
+
+/* =========================
+   MICROSCOPE HEAD
+========================= */
+
+.microscope-head {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+.eyepiece {
+    position: absolute;
+    top: 0;
+    left: 100px;
+
+    width: 75px;
+    height: 50px;
+
+    background: #334155;
+    border-radius: 12px 12px 5px 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.body-tube {
+    position: absolute;
+    top: 40px;
+    left: 120px;
+
+    width: 45px;
+    height: 110px;
+
+    background: #475569;
+    transform: rotate(12deg);
+    border-radius: 10px;
+}
+
+.objective-holder {
+    position: absolute;
+    top: 135px;
+    left: 95px;
+
+    display: flex;
+    gap: 8px;
+}
+
+.objective {
+    width: 50px;
+    height: 45px;
+
+    background: #64748b;
+    color: white;
+
+    border: 2px solid #475569;
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.objective:hover {
+    background: #1677ff;
+}
+
+.objective.selected {
+    background: #1677ff;
+    border-color: #0d5fd1;
+}
+
+
+/* =========================
+   STAGE
+========================= */
+
+.stage {
+    position: relative;
+
+    width: 500px;
+    max-width: 80%;
+
+    height: 180px;
+
+    margin: 0 auto;
+
+    background: #64748b;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        inset 0 5px 10px rgba(0,0,0,0.15);
+}
+
+
+/* Slide */
+
+.slide {
+    width: 300px;
+    height: 120px;
+
+    background: rgba(255,255,255,0.9);
+
+    border: 3px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.3;
+
+    transition: 0.5s;
+}
+
+.slide.placed {
+    opacity: 1;
+}
+
+
+/* Specimen */
+
+.specimen {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #f8fafc;
+
+    border: 1px solid #cbd5e1;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    transform: scale(1);
+
+    filter: blur(7px);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease,
+        opacity 0.5s ease;
+}
+
+.specimen span {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.specimen span {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.specimen.focused span {
+    font-size: 22px;
+}
+
+
+/* =========================
+   BASE
+========================= */
+
+.microscope-base {
+    width: 620px;
+    max-width: 90%;
+
+    margin: 25px auto 0;
+
+    background: #475569;
+
+    border-radius: 25px 25px 45px 45px;
+
+    padding: 25px;
+
+    color: white;
+}
+
+
+/* Focus controls */
+
+.focus-controls {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.control-group {
+    text-align: center;
+}
+
+.control-group label,
+.light-controls label {
+    display: block;
+    font-size: 11px;
+    color: #cbd5e1;
+    margin-bottom: 7px;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-buttons button,
+.diaphragm-control button {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    background: #e2e8f0;
+    color: #172033;
+
+    font-weight: bold;
+}
+
+.control-buttons span,
+.diaphragm-control span {
+    min-width: 25px;
+    text-align: center;
+}
+
+
+/* Light controls */
+
+.light-controls {
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #64748b;
+
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.light-controls button {
+    background: #ef4444;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 7px 15px;
+
+    cursor: pointer;
+}
+
+.light-controls button.on {
+    background: #22c55e;
+}
+
+.diaphragm-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* =========================
+   STATUS PANEL
+========================= */
+
+.status-panel {
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.status-panel div {
+    text-align: center;
+}
+
+.status-panel span {
+    display: block;
+    color: #94a3b8;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.status-panel strong {
+    font-size: 14px;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(15,23,42,0.65);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 100;
+}
+
+.modal-content {
+    width: 400px;
+    max-width: 90%;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+    color: #16a34a;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.final-score {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.final-score span {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.final-score strong {
+    color: #1677ff;
+    font-size: 30px;
+}
+
+.modal-content button {
+    border: none;
+    background: #1677ff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+/* =========================
+   UTILITIES
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .simulation-container {
+        grid-template-columns: 1fr;
+    }
+
+    .instruction-panel {
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .microscope-area {
+        min-height: 500px;
+    }
+
+    .status-panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .simulation-navbar {
+        padding: 0 15px;
+    }
+
+    .experiment-title {
+        display: none;
+    }
+
+    .laboratory {
+        padding: 15px;
+    }
+
+    .microscope-area {
+        padding: 15px;
+    }
+
+    .stage {
+        width: 100%;
+    }
+
+    .microscope-base {
+        width: 100%;
+    }
+
+    .focus-controls {
+        gap: 15px;
+    }
+
+    .light-controls {
+        gap: 20px;
+    }
+/* =========================================
+   MICROSCOPIC VIEW
+========================================= */
+
+.microscopic-view {
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: #f8fafc;
+
+    border: 10px solid #334155;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 0 5px #94a3b8,
+        0 10px 25px rgba(0, 0, 0, 0.2);
+
+}
+
+
+/* Specimen inside microscope */
+
+.microscopic-view .specimen {
+
+    width: 90px;
+    height: 90px;
+
+    background: transparent;
+
+    border: none;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    filter: blur(7px);
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease,
+        opacity 0.5s ease;
+
+}
+
+
+/* Specimen particles */
+
+.microscopic-view .specimen span {
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #475569;
+
+    font-size: 0;
+
+    display: block;
+
+}
+
+
+/* View label */
+
+.view-label {
+
+    position: absolute;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(15, 23, 42, 0.75);
+
+    color: white;
+
+    padding: 5px 10px;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* Magnification */
+
+.magnification-label {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+    background: #1677ff;
+
+    color: white;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}/* =========================================
+   RESULT PAGE
+========================================= */
+
+.result-label {
+
+    color: #1677ff;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 6px;
+
+}
+
+
+.modal-content h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.final-score {
+
+    margin: 20px 0 12px;
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+}
+
+
+.final-score span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+
+}
+
+
+.final-score strong {
+
+    display: block;
+
+    color: #1677ff;
+
+    font-size: 34px;
+
+}
+
+
+/* PERFORMANCE */
+
+.performance-box {
+
+    padding: 12px;
+
+    background: #eef6ff;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.performance-box span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+}
+
+
+.performance-box strong {
+
+    color: #1677ff;
+
+    font-size: 17px;
+
+}
+
+
+/* RESULT SECTION */
+
+.result-section {
+
+    text-align: left;
+
+    margin-bottom: 20px;
+
+}
+
+
+.result-section h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.result-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 7px 0;
+
+    border-bottom: 1px solid #f1f5f9;
+
+}
+
+
+.result-item span {
+
+    width: 22px;
+
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: #dcfce7;
+
+    color: #16a34a;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.result-item p {
+
+    color: #475569;
+
+    font-size: 13px;
+
+}
+
+
+/* BUTTONS */
+
+.result-buttons {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+}
+
+
+.retry-button,
+.dashboard-button {
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.retry-button {
+
+    background: #eaf4ff;
+
+    color: #1677ff;
+
+}
+
+
+.dashboard-button {
+
+    background: #1677ff;
+
+    color: white;
+
+}
+
+
+.retry-button:hover,
+.dashboard-button:hover {
+
+    transform: translateY(-2px);
+
+}
+}

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Microbial Analysis of Food Samples | MicroVirtualLab</title>
+
+    <link rel="stylesheet" href="food-analysis.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+    <header class="experiment-header">
+
+        <div class="header-left">
+            <div class="logo-icon">🔬</div>
+
+            <div>
+                <h1>MicroVirtualLab</h1>
+                <p>Virtual Microbiology Practical Laboratory</p>
+            </div>
+        </div>
+
+        <div class="experiment-badge">
+            EXPERIMENT 05
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+    <main class="experiment-container">
+
+        <!-- INTRODUCTION -->
+        <section class="intro-section">
+
+            <div class="intro-icon">
+                🧫
+            </div>
+
+            <div class="intro-content">
+
+                <h2>Microbial Analysis of Food Samples</h2>
+
+                <p>
+                    This virtual learning activity introduces the concepts
+                    involved in microbial analysis of food samples, including
+                    dilution, colony counting, and interpretation of microbial
+                    counts.
+                </p>
+
+                <div class="source-note">
+                    <strong>Learning focus:</strong>
+                    Food sample analysis, decimal dilution, colony counts,
+                    countable plates, and colony-forming units (CFU).
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             LEARNING OBJECTIVES
+        ========================================== -->
+        <section class="objectives-section">
+
+            <h2>Learning Objectives</h2>
+
+            <p class="section-introduction">
+                After completing this activity, you should be able to:
+            </p>
+
+            <div class="objectives-grid">
+
+                <div class="objective-card">
+                    <span class="objective-number">01</span>
+
+                    <div>
+                        <h3>Understand Food Sample Analysis</h3>
+
+                        <p>
+                            Explain the purpose of analysing microorganisms
+                            associated with food samples.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="objective-card">
+                    <span class="objective-number">02</span>
+
+                    <div>
+                        <h3>Understand Dilution</h3>
+
+                        <p>
+                            Recognize the role of decimal dilution in microbial
+                            analysis.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="objective-card">
+                    <span class="objective-number">03</span>
+
+                    <div>
+                        <h3>Interpret Colony Counts</h3>
+
+                        <p>
+                            Identify the purpose of selecting a suitable
+                            countable plate.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="objective-card">
+                    <span class="objective-number">04</span>
+
+                    <div>
+                        <h3>Understand CFU</h3>
+
+                        <p>
+                            Explain what colony-forming units represent in
+                            microbial analysis.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             KEY CONCEPTS
+        ========================================== -->
+        <section class="concepts-section">
+
+            <h2>Key Concepts</h2>
+
+            <div class="concepts-grid">
+
+                <div class="concept-card">
+
+                    <div class="concept-icon">
+                        🍽️
+                    </div>
+
+                    <h3>Food Sample</h3>
+
+                    <p>
+                        A food sample can be examined to estimate the
+                        microorganisms associated with the sample.
+                    </p>
+
+                </div>
+
+
+                <div class="concept-card">
+
+                    <div class="concept-icon">
+                        🔢
+                    </div>
+
+                    <h3>Decimal Dilution</h3>
+
+                    <p>
+                        Decimal dilution is used to obtain progressively
+                        diluted samples so that microbial numbers can be
+                        assessed through colony counts.
+                    </p>
+
+                </div>
+
+
+                <div class="concept-card">
+
+                    <div class="concept-icon">
+                        🔬
+                    </div>
+
+                    <h3>Colony Count</h3>
+
+                    <p>
+                        A colony count represents the number of visible
+                        colonies observed on a suitable plate.
+                    </p>
+
+                </div>
+
+
+                <div class="concept-card">
+
+                    <div class="concept-icon">
+                        📊
+                    </div>
+
+                    <h3>CFU</h3>
+
+                    <p>
+                        CFU, or colony-forming units, is used to express an
+                        estimated number of viable microorganisms represented
+                        by the colonies counted.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             START ACTIVITY
+        ========================================== -->
+        <section class="start-section">
+
+            <div class="start-card">
+
+                <div class="start-icon">
+                    🧪
+                </div>
+
+                <div class="start-content">
+
+                    <h2>Ready to Begin?</h2>
+
+                    <p>
+                        Test your understanding of microbial analysis of food
+                        samples through an interactive question activity.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="startActivityButton"
+                        class="primary-button"
+                    >
+                        Start Activity
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             QUIZ SECTION
+        ========================================== -->
+        <section
+            id="quizSection"
+            class="quiz-section"
+            style="display: none;"
+        >
+
+            <!-- QUIZ HEADER -->
+            <div class="quiz-header">
+
+                <div>
+                    <span class="quiz-label">
+                        EXPERIMENT 05
+                    </span>
+
+                    <h2 id="questionTitle">
+                        Question 1
+                    </h2>
+                </div>
+
+                <div class="score-display">
+
+                    <span>Score</span>
+
+                    <strong id="scoreDisplay">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+            <div class="progress-area">
+
+                <div class="progress-information">
+
+                    <span id="questionCounter">
+                        Question 1 of 10
+                    </span>
+
+                    <span id="progressPercentage">
+                        0%
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progressFill"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUESTION -->
+            <div class="question-card">
+
+                <div class="question-number" id="questionNumber">
+                    01
+                </div>
+
+                <h3 id="questionText">
+                    Question text will appear here.
+                </h3>
+
+                <div
+                    id="answerOptions"
+                    class="answer-options"
+                >
+                    <!-- JavaScript inserts options -->
+                </div>
+
+            </div>
+
+
+            <!-- FEEDBACK -->
+            <div
+                id="feedback"
+                class="feedback"
+                style="display: none;"
+            >
+
+                <div
+                    id="feedbackIcon"
+                    class="feedback-icon"
+                >
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3 id="feedbackTitle">
+                        Correct!
+                    </h3>
+
+                    <p id="feedbackText">
+                        Feedback will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUIZ BUTTON -->
+            <div class="quiz-controls">
+
+                <button
+                    type="button"
+                    id="nextButton"
+                    class="primary-button"
+                    style="display: none;"
+                >
+                    Next Question
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             RESULT SECTION
+        ========================================== -->
+        <section
+            id="resultSection"
+            class="result-section"
+            style="display: none;"
+        >
+
+            <div class="result-card">
+
+                <div class="result-icon">
+                    🏆
+                </div>
+
+                <h2>Activity Completed</h2>
+
+                <p class="result-subtitle">
+                    Microbial Analysis of Food Samples
+                </p>
+
+
+                <!-- SCORE -->
+                <div class="final-score-container">
+
+                    <span>Your Score</span>
+
+                    <div
+                        id="finalScore"
+                        class="final-score"
+                    >
+                        0%
+                    </div>
+
+                </div>
+
+
+                <!-- PERFORMANCE -->
+                <div class="performance-container">
+
+                    <h3 id="performanceLevel">
+                        Performance
+                    </h3>
+
+                    <p id="resultMessage">
+                        Your performance will appear here.
+                    </p>
+
+                </div>
+
+
+                <!-- RESULT SUMMARY -->
+                <div class="result-summary">
+
+                    <div class="summary-item">
+
+                        <span>Correct Answers</span>
+
+                        <strong id="correctAnswers">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span>Total Questions</span>
+
+                        <strong id="totalQuestions">
+                            10
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span>Percentage</span>
+
+                        <strong id="percentageResult">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RESULT ACTIONS -->
+                <div class="result-actions">
+
+                    <button
+                        type="button"
+                        id="retryButton"
+                        class="secondary-button"
+                    >
+                        Retry Activity
+                    </button>
+
+                    <button
+                        type="button"
+                        id="dashboardButton"
+                        class="primary-button"
+                    >
+                        Return to Dashboard
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FOOTER INFORMATION
+        ========================================== -->
+        <section class="information-section">
+
+            <div class="info-box">
+
+                <span class="info-icon">💡</span>
+
+                <div>
+
+                    <h3>Virtual Learning Activity</h3>
+
+                    <p>
+                        This activity is designed to reinforce the theoretical
+                        concepts presented in the microbiology practical
+                        manual.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+    <footer class="experiment-footer">
+
+        <p>
+            © 2026 MicroVirtualLab |
+            Virtual Microbiology Practical Laboratory
+        </p>
+
+        <p>
+            Experiment 05 — Microbial Analysis of Food Samples
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="food-analysis.js"></script>
+
+</body>
+</html>

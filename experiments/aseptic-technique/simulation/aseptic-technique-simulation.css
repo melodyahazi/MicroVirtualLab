@@ -1,0 +1,1643 @@
+/* =========================================
+   EXPERIMENT 02
+   ASEPTIC TECHNIQUES
+   VIRTUAL PRACTICAL SIMULATION
+========================================= */
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVIGATION BAR
+========================================= */
+
+.simulation-navbar {
+    height: 72px;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+    color: #0f172a;
+}
+
+.brand span {
+    font-size: 27px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.simulation-container {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 45px 0 70px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.simulation-header {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 35px;
+}
+
+.simulation-label {
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 9px;
+}
+
+.simulation-header h1 {
+    font-size: 38px;
+
+    color: #0f172a;
+
+    margin-bottom: 14px;
+}
+
+.simulation-header p {
+    color: #64748b;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-section {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 18px 22px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #475569;
+}
+
+#progressPercent {
+    color: #2563eb;
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 8px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 12.5%;
+
+    height: 100%;
+
+    background: #2563eb;
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================================
+   WORKSPACE
+========================================= */
+
+.workspace {
+    display: grid;
+
+    grid-template-columns: 1.45fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   PANELS
+========================================= */
+
+.laboratory-panel,
+.instruction-panel {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================
+   PANEL HEADER
+========================================= */
+
+.panel-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.panel-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 12px;
+
+    background: #eff6ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.small-label {
+    color: #2563eb;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 2px;
+}
+
+.panel-header h2 {
+    font-size: 23px;
+
+    color: #0f172a;
+}
+
+
+/* =========================================
+   LAB BENCH
+========================================= */
+
+.lab-bench {
+    position: relative;
+
+    width: 100%;
+
+    height: 455px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    border: 2px solid #cbd5e1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #e5ebf1 0%,
+            #e5ebf1 76%,
+            #cbd5e1 76%,
+            #cbd5e1 100%
+        );
+
+    box-shadow:
+        inset 0 0 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================
+   LAB EQUIPMENT GENERAL
+========================================= */
+
+.equipment {
+    position: absolute;
+
+    text-align: center;
+
+    color: #475569;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.equipment > span {
+    display: block;
+
+    margin-top: 7px;
+}
+
+
+/* =========================================
+   WEIGHING BALANCE
+========================================= */
+
+.balance {
+    left: 7%;
+    top: 10%;
+}
+
+.balance-screen {
+    width: 105px;
+
+    height: 34px;
+
+    background: #1e293b;
+
+    color: #a7f3d0;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: monospace;
+
+    font-size: 13px;
+
+    margin: auto;
+
+    border: 3px solid #94a3b8;
+}
+
+.balance-platform {
+    width: 125px;
+
+    height: 15px;
+
+    background: #cbd5e1;
+
+    border: 2px solid #94a3b8;
+
+    border-radius: 5px;
+
+    margin: 6px auto 0;
+}
+
+
+/* =========================================
+   MEDIA CONTAINER
+========================================= */
+
+.media-container {
+    left: 42%;
+
+    top: 9%;
+}
+
+.media-lid {
+    width: 75px;
+
+    height: 13px;
+
+    background: #cbd5e1;
+
+    border: 2px solid #94a3b8;
+
+    border-radius: 4px;
+
+    margin: auto;
+}
+
+.media-body {
+    width: 68px;
+
+    height: 83px;
+
+    background: #f8fafc;
+
+    border: 3px solid #94a3b8;
+
+    border-radius: 7px 7px 13px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    margin: -1px auto 0;
+}
+
+
+/* =========================================
+   FLASK
+========================================= */
+
+.flask {
+    left: 67%;
+
+    top: 9%;
+}
+
+.flask-neck {
+    width: 28px;
+
+    height: 45px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border: 3px solid #94a3b8;
+
+    border-bottom: none;
+
+    margin: auto;
+
+    border-radius: 5px 5px 0 0;
+}
+
+.flask-body {
+    width: 105px;
+
+    height: 95px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 3px solid #94a3b8;
+
+    border-radius: 12px 12px 45px 45px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    padding-bottom: 25px;
+
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.flask-body::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 5px;
+
+    right: 5px;
+
+    height: 48px;
+
+    background: #e8dcae;
+
+    border-radius: 5px 5px 35px 35px;
+}
+
+.flask-body span {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   PETRI DISH
+========================================= */
+
+.petri-dish {
+    left: 24%;
+
+    top: 49%;
+}
+
+.dish-inner {
+    width: 125px;
+
+    height: 48px;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #f7efc8 0%,
+            #eee4b9 75%
+        );
+
+    border: 4px solid #94a3b8;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    box-shadow:
+        inset 0 4px 8px rgba(100, 90, 60, 0.12);
+}
+
+.dish-inner::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #8d9b76;
+
+    top: 15px;
+    left: 30px;
+
+    box-shadow:
+        22px 3px 0 #aa9860,
+        45px -3px 0 #8b956d,
+        68px 7px 0 #9c8950;
+}
+
+
+/* =========================================
+   BUNSEN BURNER
+========================================= */
+
+.burner {
+    left: 53%;
+
+    top: 51%;
+}
+
+.burner-top {
+    width: 32px;
+
+    height: 75px;
+
+    background: #94a3b8;
+
+    border-radius: 4px 4px 8px 8px;
+
+    margin: auto;
+
+    border: 2px solid #64748b;
+}
+
+.burner-top::before {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+
+    height: 13px;
+
+    background: #64748b;
+
+    border-radius: 50%;
+
+    margin-left: -18px;
+
+    margin-top: -4px;
+}
+
+.flame {
+    font-size: 30px;
+
+    height: 35px;
+
+    opacity: 0.2;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================
+   AUTOCLAVE
+========================================= */
+
+.autoclave {
+    left: 74%;
+
+    top: 49%;
+}
+
+.autoclave-door {
+    width: 125px;
+
+    height: 100px;
+
+    background: #cbd5e1;
+
+    border: 4px solid #64748b;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 11px;
+
+    color: #475569;
+
+    box-shadow:
+        inset 0 0 15px rgba(15, 23, 42, 0.1);
+}
+
+.autoclave-display {
+    width: 75px;
+
+    margin: 8px auto 0;
+
+    padding: 5px;
+
+    background: #1e293b;
+
+    color: #86efac;
+
+    border-radius: 4px;
+
+    font-family: monospace;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.label-item {
+    left: 8%;
+
+    top: 57%;
+}
+
+.label-paper {
+    width: 85px;
+
+    height: 48px;
+
+    background: white;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 10px;
+
+    color: #334155;
+
+    transform: rotate(-5deg);
+
+    box-shadow:
+        0 4px 8px rgba(15, 23, 42, 0.1);
+}
+
+
+/* =========================================
+   ACTIVE EQUIPMENT
+========================================= */
+
+.equipment.active {
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 5px 10px rgba(37, 99, 235, 0.22)
+        );
+}
+
+
+/* =========================================
+   LAB STATUS
+========================================= */
+
+.lab-status {
+    margin-top: 18px;
+
+    padding: 15px 17px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.status-icon {
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.lab-status p {
+    font-size: 13px;
+
+    color: #475569;
+}
+
+
+/* =========================================
+   INSTRUCTION PANEL
+========================================= */
+
+.instruction-panel {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.instruction-label {
+    color: #2563eb;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+.instruction-panel h2 {
+    font-size: 26px;
+
+    color: #0f172a;
+
+    margin-bottom: 12px;
+
+    line-height: 1.25;
+}
+
+.instruction-panel > p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   ACTION AREA
+========================================= */
+
+.action-area {
+    flex: 1;
+
+    background: #f8fafc;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 10px;
+
+    min-height: 150px;
+
+    padding: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   ACTION CARDS
+========================================= */
+
+.action-choice {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    margin-bottom: 10px;
+
+    background: white;
+
+    border: 1px solid #dbe3ec;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    color: #334155;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+.action-choice:hover {
+    border-color: #2563eb;
+
+    background: #eff6ff;
+}
+
+.action-choice:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    margin-bottom: 18px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 10px;
+}
+
+.feedback-icon {
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-weight: bold;
+}
+
+.feedback strong {
+    display: block;
+
+    color: #166534;
+
+    margin-bottom: 3px;
+}
+
+.feedback p {
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.feedback.wrong {
+    background: #fef2f2;
+
+    border-color: #fecaca;
+}
+
+.feedback.wrong .feedback-icon {
+    background: #dc2626;
+}
+
+.feedback.wrong strong {
+    color: #991b1b;
+}
+
+
+/* =========================================
+   ACTION BUTTON
+========================================= */
+
+.action-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 14px 20px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.action-button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.action-button:disabled {
+    background: #94a3b8;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   MATERIALS SECTION
+========================================= */
+
+.materials-section {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.heading-icon {
+    width: 48px;
+
+    height: 48px;
+
+    background: #eff6ff;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.section-heading h2 {
+    color: #0f172a;
+
+    font-size: 22px;
+}
+
+.materials-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+}
+
+.material-card {
+    padding: 17px 10px;
+
+    text-align: center;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    transition: 0.2s ease;
+}
+
+.material-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #bfdbfe;
+}
+
+.material-card span {
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 7px;
+}
+
+.material-card p {
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   RESULT SECTION
+========================================= */
+
+.result-section {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.05);
+}
+
+.result-icon {
+    font-size: 58px;
+
+    margin-bottom: 12px;
+}
+
+.result-section h2 {
+    color: #0f172a;
+
+    font-size: 31px;
+
+    margin-bottom: 10px;
+}
+
+.result-section > p {
+    color: #64748b;
+
+    max-width: 650px;
+
+    margin: 0 auto 28px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RESULT SUMMARY
+========================================= */
+
+.result-summary {
+    max-width: 500px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.result-box {
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+}
+
+.result-box span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.result-box strong {
+    color: #2563eb;
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   FINAL OBSERVATION
+========================================= */
+
+.final-observation {
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    padding: 18px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+
+    text-align: left;
+}
+
+.final-observation h3 {
+    color: #1e3a8a;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.final-observation p {
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   DASHBOARD BUTTON
+========================================= */
+
+.dashboard-button {
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 14px 26px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.dashboard-button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .materials-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .simulation-container {
+        width: 94%;
+
+        padding-top: 30px;
+    }
+
+    .simulation-navbar {
+        padding: 0 4%;
+    }
+
+    .simulation-header h1 {
+        font-size: 31px;
+    }
+
+    .laboratory-panel,
+    .instruction-panel,
+    .materials-section {
+        padding: 20px;
+    }
+
+    .lab-bench {
+        height: 380px;
+    }
+
+    .materials-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .result-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .simulation-navbar {
+        height: 65px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .back-link {
+        font-size: 12px;
+    }
+
+    .simulation-header h1 {
+        font-size: 27px;
+    }
+
+    .lab-bench {
+        height: 330px;
+    }
+
+    .balance {
+        left: 4%;
+        transform: scale(0.75);
+        transform-origin: top left;
+    }
+
+    .media-container {
+        left: 38%;
+        transform: scale(0.8);
+        transform-origin: top center;
+    }
+
+    .flask {
+        left: 65%;
+        transform: scale(0.72);
+        transform-origin: top left;
+    }
+
+    .petri-dish {
+        left: 15%;
+        top: 52%;
+        transform: scale(0.78);
+        transform-origin: top left;
+    }
+
+    .burner {
+        left: 50%;
+        top: 53%;
+        transform: scale(0.8);
+        transform-origin: top center;
+    }
+
+    .autoclave {
+        left: 68%;
+        top: 52%;
+        transform: scale(0.65);
+        transform-origin: top left;
+    }
+
+    .label-item {
+        left: 5%;
+        top: 68%;
+        transform: scale(0.75);
+        transform-origin: top left;
+    }
+}/* =========================================================
+   VIRTUAL ACTION OPTIONS
+========================================================= */
+
+.action-heading {
+    font-size: 15px;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 14px;
+}
+
+
+/* Container */
+
+.action-options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: 100%;
+}
+
+
+/* Individual selectable item */
+
+.action-option {
+    width: 100%;
+    min-height: 58px;
+
+    padding: 14px 18px;
+
+    border: 2px solid #dbe4f0;
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover */
+
+.action-option:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #2563eb;
+
+    background: #f8fbff;
+
+    box-shadow:
+        0 5px 14px rgba(37, 99, 235, 0.12);
+
+}
+
+
+/* Selected */
+
+.action-option.selected {
+
+    border-color: #2563eb;
+
+    background: #eaf2ff;
+
+    color: #1d4ed8;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+
+}
+
+
+/* Disabled */
+
+.action-option:disabled {
+
+    cursor: default;
+
+    opacity: 0.75;
+
+}
+
+
+/* =========================================================
+   VIRTUAL EQUIPMENT INTERACTION
+========================================================= */
+
+.equipment {
+
+    transition:
+        translate 0.7s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+
+    cursor: pointer;
+
+}
+
+
+/* Selected equipment */
+
+.equipment.selected {
+
+    z-index: 20;
+
+    filter:
+        drop-shadow(0 8px 12px rgba(37, 99, 235, 0.25));
+
+}
+
+
+/* Correct equipment */
+
+.equipment.correct {
+
+    z-index: 20;
+
+    filter:
+        drop-shadow(0 8px 14px rgba(22, 163, 74, 0.35));
+
+}
+
+
+/* =========================================================
+   EQUIPMENT MOVEMENT
+========================================================= */
+
+/*
+   These use the CSS `translate` property instead of
+   `transform`, so they don't interfere with the existing
+   positioning of your laboratory equipment.
+*/
+
+.equipment.move-to-workspace {
+
+    translate: 0 -45px;
+
+}
+
+
+/* Individual movement positions */
+
+#balance.move-to-workspace {
+    translate: 100px 70px;
+}
+
+#mediaContainer.move-to-workspace {
+    translate: 40px 65px;
+}
+
+#flask.move-to-workspace {
+    translate: -80px 55px;
+}
+
+#petriDish.move-to-workspace {
+    translate: 90px -25px;
+}
+
+#burner.move-to-workspace {
+    translate: 20px -70px;
+}
+
+#autoclave.move-to-workspace {
+    translate: -70px -20px;
+}
+
+#labelItem.move-to-workspace {
+    translate: 100px -50px;
+}
+
+
+/* =========================================================
+   ACTION AREA
+========================================================= */
+
+.action-area {
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+.feedback.correct {
+
+    border-color: #86efac;
+
+    background: #f0fdf4;
+
+    color: #166534;
+
+}
+
+
+.feedback.incorrect {
+
+    border-color: #fca5a5;
+
+    background: #fef2f2;
+
+    color: #991b1b;
+
+}
+
+
+.feedback.warning {
+
+    border-color: #fde68a;
+
+    background: #fffbeb;
+
+    color: #92400e;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .action-option {
+
+        min-height: 54px;
+
+        font-size: 15px;
+
+        padding: 13px 15px;
+
+    }
+
+
+    .action-area {
+
+        padding: 14px;
+
+    }
+
+}

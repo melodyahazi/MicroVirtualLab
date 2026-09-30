@@ -1,0 +1,864 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.page-header {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    padding: 22px 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-icon {
+    font-size: 42px;
+}
+
+.brand h1 {
+    font-size: 27px;
+    margin-bottom: 2px;
+}
+
+.brand p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.experiment-badge {
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.main-container {
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+
+/* =========================================
+   INTRODUCTION
+========================================= */
+
+.intro-section {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(15, 118, 110, 0.08);
+    border-left: 5px solid #0d9488;
+}
+
+.intro-icon {
+    min-width: 75px;
+    height: 75px;
+    background: #ccfbf1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+}
+
+.intro-content h2 {
+    color: #0f766e;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.intro-content p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+
+/* =========================================
+   CONTENT SECTIONS
+========================================= */
+
+.content-section {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(15, 118, 110, 0.06);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.section-heading h2 {
+    color: #0f766e;
+    font-size: 22px;
+}
+
+.section-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #ccfbf1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+}
+
+
+/* =========================================
+   OBJECTIVES
+========================================= */
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.objective-card {
+    display: flex;
+    gap: 15px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s ease;
+}
+
+.objective-card:hover {
+    transform: translateY(-3px);
+    border-color: #5eead4;
+}
+
+.objective-number {
+    min-width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #0d9488;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.objective-card h3 {
+    color: #334155;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.objective-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   KEY CONCEPTS
+========================================= */
+
+.concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.concept-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-4px);
+    border-color: #5eead4;
+    box-shadow: 0 5px 15px rgba(15, 118, 110, 0.08);
+}
+
+.concept-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 15px;
+    background: #ccfbf1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.concept-card h3 {
+    color: #0f766e;
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.concept-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   BIOCHEMICAL TEST LIST
+========================================= */
+
+.test-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.test-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    transition: 0.3s ease;
+}
+
+.test-item:hover {
+    transform: translateX(4px);
+    border-color: #5eead4;
+    background: #f0fdfa;
+}
+
+.test-number {
+    min-width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    background: #0f766e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.test-item h3 {
+    color: #334155;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.test-item p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   INFORMATION SECTION
+========================================= */
+
+.information-section {
+    background: #ecfeff;
+    border: 1px solid #a5f3fc;
+    border-left: 5px solid #0891b2;
+    border-radius: 14px;
+    padding: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.information-icon {
+    font-size: 32px;
+}
+
+.information-section h2 {
+    color: #0e7490;
+    margin-bottom: 7px;
+    font-size: 20px;
+}
+
+.information-section p {
+    color: #475569;
+    font-size: 15px;
+}
+
+
+/* =========================================
+   ACTIVITY SECTION
+========================================= */
+
+.activity-section {
+    background: linear-gradient(135deg, #0f766e, #0d9488);
+    color: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(15, 118, 110, 0.18);
+}
+
+.activity-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.activity-icon {
+    font-size: 45px;
+}
+
+.activity-content h2 {
+    margin-bottom: 5px;
+    font-size: 23px;
+}
+
+.activity-content p {
+    opacity: 0.9;
+    font-size: 15px;
+}
+
+.start-button {
+    margin-left: auto;
+    background: white;
+    color: #0f766e;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+    white-space: nowrap;
+}
+
+.start-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   QUIZ SECTION
+========================================= */
+
+.quiz-section {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(15, 118, 110, 0.07);
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.quiz-header h2 {
+    color: #0f766e;
+    font-size: 23px;
+}
+
+.quiz-header p {
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.score-box {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 12px;
+    padding: 12px 22px;
+    text-align: center;
+}
+
+.score-box span {
+    display: block;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.score-box strong {
+    color: #047857;
+    font-size: 25px;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-container {
+    margin: 25px 0;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0f766e, #14b8a6);
+    border-radius: 10px;
+    transition: width 0.4s ease;
+}
+
+
+/* =========================================
+   QUESTION CARD
+========================================= */
+
+.question-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 28px;
+    background: #ffffff;
+}
+
+.question-number {
+    display: inline-block;
+    background: #ccfbf1;
+    color: #0f766e;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.question-card h3 {
+    color: #1e293b;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   ANSWER OPTIONS
+========================================= */
+
+.answer-options {
+    display: grid;
+    gap: 13px;
+}
+
+.answer-option {
+    width: 100%;
+    text-align: left;
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    color: #334155;
+    padding: 16px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.25s ease;
+}
+
+.answer-option:hover {
+    border-color: #14b8a6;
+    background: #f0fdfa;
+    transform: translateX(3px);
+}
+
+.answer-option.correct {
+    background: #ecfdf5;
+    border-color: #10b981;
+    color: #047857;
+}
+
+.answer-option.incorrect {
+    background: #fef2f2;
+    border-color: #ef4444;
+    color: #b91c1c;
+}
+
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback {
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.feedback-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    background: #10b981;
+    color: white;
+    flex-shrink: 0;
+}
+
+.feedback h4 {
+    margin-bottom: 5px;
+    color: #047857;
+}
+
+.feedback p {
+    color: #475569;
+    font-size: 14px;
+}
+
+
+/* =========================================
+   NEXT BUTTON
+========================================= */
+
+.next-button {
+    margin-top: 22px;
+    background: #0f766e;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.next-button:hover {
+    background: #115e59;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESULT SECTION
+========================================= */
+
+.result-section {
+    background: white;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(15, 118, 110, 0.08);
+}
+
+.result-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.result-section h2 {
+    color: #0f766e;
+    font-size: 27px;
+}
+
+.result-subtitle {
+    color: #64748b;
+    margin-top: 5px;
+}
+
+
+.final-score-card {
+    margin: 30px auto 20px;
+    max-width: 350px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.final-score-card span {
+    display: block;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.final-score-card strong {
+    color: #047857;
+    font-size: 45px;
+}
+
+
+.performance-card {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.performance-card h3 {
+    color: #0f766e;
+    margin-bottom: 7px;
+}
+
+.performance-card p {
+    color: #64748b;
+}
+
+
+/* =========================================
+   RESULT DETAILS
+========================================= */
+
+.result-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.result-detail {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.detail-label {
+    display: block;
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.result-detail strong {
+    color: #334155;
+    font-size: 22px;
+}
+
+
+/* =========================================
+   RESULT ACTIONS
+========================================= */
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.retry-button,
+.dashboard-button {
+    border: none;
+    padding: 13px 23px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.retry-button {
+    background: #0f766e;
+    color: white;
+}
+
+.dashboard-button {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.retry-button:hover,
+.dashboard-button:hover {
+    transform: translateY(-2px);
+}
+
+.retry-button:hover {
+    background: #115e59;
+}
+
+.dashboard-button:hover {
+    background: #cbd5e1;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.page-footer {
+    background: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+
+    .concepts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .objectives-grid,
+    .test-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .page-header {
+        padding: 18px 20px;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .experiment-badge {
+        align-self: flex-start;
+    }
+
+    .main-container {
+        margin-top: 20px;
+    }
+
+    .intro-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .activity-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .start-button {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .concepts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .score-box {
+        width: 100%;
+    }
+
+    .result-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .brand h1 {
+        font-size: 22px;
+    }
+
+    .brand-icon {
+        font-size: 34px;
+    }
+
+    .content-section,
+    .quiz-section,
+    .result-section {
+        padding: 20px;
+    }
+
+    .question-card {
+        padding: 20px;
+    }
+
+    .question-card h3 {
+        font-size: 17px;
+    }
+
+    .intro-content h2 {
+        font-size: 21px;
+    }
+
+    .final-score-card strong {
+        font-size: 38px;
+    }
+}

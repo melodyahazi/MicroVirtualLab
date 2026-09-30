@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Virtual Microscope | MicroVirtualLab</title>
+
+    <link rel="stylesheet"
+          href="simulation.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<header class="simulation-navbar">
+
+    <div class="brand">
+        <span>🔬</span>
+        <strong>MicroVirtualLab</strong>
+    </div>
+
+    <div class="experiment-title">
+
+        <span>EXPERIMENT 01</span>
+
+        <strong>
+            Microscope Simulation
+        </strong>
+
+    </div>
+
+    <div class="score-display">
+
+        <span>Score</span>
+
+        <strong id="score">
+            0
+        </strong>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MAIN SIMULATION
+========================= -->
+
+<main class="simulation-container">
+
+
+    <!-- LEFT PANEL -->
+
+    <aside class="instruction-panel">
+
+        <p class="simulation-label">
+            VIRTUAL LABORATORY
+        </p>
+
+        <h2>
+            Microscope Practical
+        </h2>
+
+
+        <div class="progress-container">
+
+            <div class="progress-text">
+
+                <span>
+                    Progress
+                </span>
+
+                <span id="stepCounter">
+                    Step 1 of 6
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressValue"
+                    class="progress-value">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- INSTRUCTION -->
+
+        <div class="instruction-box">
+
+            <div class="instruction-icon">
+                💡
+            </div>
+
+            <div class="instruction-content">
+
+                <p class="instruction-label">
+                    CURRENT TASK
+                </p>
+
+                <h3 id="instructionTitle">
+                    Place the slide
+                </h3>
+
+                <p id="instructionText">
+                    Place the prepared slide on the
+                    microscope stage.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEEDBACK -->
+
+        <div
+            id="feedback"
+            class="feedback hidden">
+
+        </div>
+
+
+        <!-- ACTION -->
+
+        <button
+            id="nextButton"
+            class="next-button"
+            onclick="nextStep()">
+
+            Place Slide →
+
+        </button>
+
+
+        <button
+            class="exit-button"
+            onclick="exitSimulation()">
+
+            ← Exit Simulation
+
+        </button>
+
+    </aside>
+
+
+
+    <!-- RIGHT SIDE -->
+
+    <section class="laboratory">
+
+
+        <!-- MICROSCOPE -->
+
+        <div class="microscope-area">
+
+
+            <!-- MICROSCOPE HEAD -->
+
+            <div class="microscope-head">
+
+                <div class="eyepiece">
+                    👁️
+                </div>
+
+                <div class="body-tube">
+                </div>
+
+                <div class="objective-holder">
+
+                    <button
+                        class="objective"
+                        onclick="selectObjective(4)">
+
+                        4×
+                        
+                    </button>
+
+                    <button
+                        class="objective"
+                        onclick="selectObjective(10)">
+
+                        10×
+
+                    </button>
+
+                    <button
+                        class="objective"
+                        onclick="selectObjective(40)">
+
+                        40×
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- STAGE -->
+
+            <div class="stage">
+
+                <div
+                    id="slide"
+                    class="slide">
+
+                    <div
+                    
+    id="microscopicView"
+    class="microscopic-view">
+
+    <div
+        id="specimen"
+        class="specimen">
+
+        <span>●</span>
+        <span>●</span>
+        <span>●</span>
+        <span>●</span>
+        <span>●</span>
+        <span>●</span>
+        <span>●</span>
+        <span>●</span>
+
+    </div>
+
+    <div class="view-label">
+        MICROSCOPE VIEW
+    </div>
+
+    <div
+        id="magnificationLabel"
+        class="magnification-label">
+
+        4×
+
+    </div>
+
+</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BASE -->
+
+            <div class="microscope-base">
+
+                <div class="focus-controls">
+
+                    <div class="control-group">
+
+                        <label>
+                            Coarse Focus
+                        </label>
+
+                        <div class="control-buttons">
+
+                            <button
+                                onclick="changeCoarse(-1)">
+                                −
+                            </button>
+
+                            <span id="coarseValue">
+                                0
+                            </span>
+
+                            <button
+                                onclick="changeCoarse(1)">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="control-group">
+
+                        <label>
+                            Fine Focus
+                        </label>
+
+                        <div class="control-buttons">
+
+                            <button
+                                onclick="changeFine(-1)">
+                                −
+                            </button>
+
+                            <span id="fineValue">
+                                0
+                            </span>
+
+                            <button
+                                onclick="changeFine(1)">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LIGHT -->
+
+                <div class="light-controls">
+
+                    <div>
+
+                        <label>
+                            Light
+                        </label>
+
+                        <button
+                            id="lightButton"
+                            onclick="toggleLight()">
+
+                            OFF
+
+                        </button>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Diaphragm
+                        </label>
+
+                        <div class="diaphragm-control">
+
+                            <button
+                                onclick="changeDiaphragm(-1)">
+                                −
+                            </button>
+
+                            <span id="diaphragmValue">
+                                0
+                            </span>
+
+                            <button
+                                onclick="changeDiaphragm(1)">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATUS PANEL -->
+
+        <div class="status-panel">
+
+            <div>
+
+                <span>
+                    Objective
+                </span>
+
+                <strong id="currentObjective">
+                    None
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Slide
+                </span>
+
+                <strong id="slideStatus">
+                    Not Placed
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Light
+                </span>
+
+                <strong id="lightStatus">
+                    OFF
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Focus
+                </span>
+
+                <strong id="focusStatus">
+                    Not Focused
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- COMPLETION MODAL -->
+
+<!-- =========================
+     COMPLETION MODAL
+========================= -->
+
+<div
+    id="completionModal"
+    class="modal hidden">
+
+    <div class="modal-content">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <p class="result-label">
+            PRACTICAL COMPLETED
+        </p>
+
+        <h2>
+            Microscope Simulation Complete
+        </h2>
+
+        <p id="resultMessage">
+            You have successfully completed
+            the virtual microscope practical.
+        </p>
+
+
+        <!-- SCORE -->
+
+        <div class="final-score">
+
+            <span>
+                Final Score
+            </span>
+
+            <strong id="finalScore">
+                0/100
+            </strong>
+
+        </div>
+
+
+        <!-- PERFORMANCE -->
+
+        <div class="performance-box">
+
+            <span>
+                Performance Level
+            </span>
+
+            <strong id="performanceLevel">
+                -
+            </strong>
+
+        </div>
+
+
+        <!-- COMPLETED STEPS -->
+
+        <div class="result-section">
+
+            <h3>
+                Completed Activities
+            </h3>
+
+            <div class="result-item">
+                <span>✓</span>
+                <p>Slide placement</p>
+            </div>
+
+            <div class="result-item">
+                <span>✓</span>
+                <p>Light adjustment</p>
+            </div>
+
+            <div class="result-item">
+                <span>✓</span>
+                <p>Objective selection</p>
+            </div>
+
+            <div class="result-item">
+                <span>✓</span>
+                <p>Coarse focusing</p>
+            </div>
+
+            <div class="result-item">
+                <span>✓</span>
+                <p>Fine focusing</p>
+            </div>
+
+            <div class="result-item">
+                <span>✓</span>
+                <p>Diaphragm adjustment</p>
+            </div>
+
+        </div>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="result-buttons">
+
+            <button
+                class="retry-button"
+                onclick="retrySimulation()">
+
+                ↻ Try Again
+
+            </button>
+
+            <button
+                class="dashboard-button"
+                onclick="returnToDashboard()">
+
+                Dashboard →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+</div>
+
+
+<script src="simulation.js"></script>
+
+</body>
+
+</html>

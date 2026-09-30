@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MicroLabSim | Microbiology Practical Simulation</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">🔬</span>
+        <span>MicroLabSim</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-buttons">
+      <button
+    class="login-btn"
+    onclick="window.location.href='dashboard.html'">
+    Login
+</button>
+
+<button
+    class="register-btn"
+    onclick="window.location.href='dashboard.html'">
+    Register
+</button>
+    </div>
+
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="small-title">
+            VIRTUAL MICROBIOLOGY LABORATORY
+        </p>
+
+        <h1>
+            Learn Microbiology<br>
+            Through <span>Interactive Simulation</span>
+        </h1>
+
+        <p class="hero-description">
+            Practice microbiology practical experiments in a safe,
+            interactive and virtual laboratory environment.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn" onclick="startSimulation()">
+                Start Simulation
+            </button>
+
+            <button class="secondary-btn" onclick="viewExperiments()">
+                View Experiments
+            </button>
+        </div>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <div class="microscope-card">
+
+            <div class="microscope">
+                🔬
+            </div>
+
+            <div class="floating-card card-one">
+                ✓ Virtual Laboratory
+            </div>
+
+            <div class="floating-card card-two">
+                🧪 Practical Learning
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Features -->
+<section class="features">
+
+    <div class="feature-card">
+
+        <div class="feature-icon">🔬</div>
+
+        <h3>Virtual Experiments</h3>
+
+        <p>
+            Perform selected microbiology practicals
+            through interactive simulations.
+        </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+        <div class="feature-icon">📚</div>
+
+        <h3>Learn & Practice</h3>
+
+        <p>
+            Study practical concepts and practice
+            laboratory procedures virtually.
+        </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+        <div class="feature-icon">📊</div>
+
+        <h3>Track Your Progress</h3>
+
+        <p>
+            Complete simulations, answer assessments
+            and monitor your performance.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Experiments -->
+<section class="experiments" id="experiments">
+
+    <div class="section-heading">
+
+        <p class="small-title">
+            MICROBIOLOGY PRACTICALS
+        </p>
+
+        <h2>
+            Explore Practical Experiments
+        </h2>
+
+        <p>
+            Select an experiment to learn its theory,
+            procedures and virtual activities.
+        </p>
+
+    </div>
+
+
+    <div class="experiment-grid">
+
+        <div class="experiment-card">
+
+            <div class="experiment-number">
+                01
+            </div>
+
+            <h3>
+                Microscope Handling
+            </h3>
+
+            <p>
+                Learn how to use and handle a microscope
+                through an interactive simulation.
+            </p>
+
+            <button onclick="openExperiment('microscope')">
+                Start Experiment →
+            </button>
+
+        </div>
+
+
+        <div class="experiment-card">
+
+            <div class="experiment-number">
+                02
+            </div>
+
+            <h3>
+                Aseptic Techniques
+            </h3>
+
+            <p>
+                Learn the principles of aseptic techniques
+                and contamination prevention.
+            </p>
+
+            <button onclick="openExperiment('aseptic')">
+                Start Experiment →
+            </button>
+
+        </div>
+
+
+        <div class="experiment-card">
+
+            <div class="experiment-number">
+                03
+            </div>
+
+            <h3>
+                Bacterial Cultivation
+            </h3>
+
+            <p>
+                Explore virtual bacterial cultivation
+                and observation of microbial growth.
+            </p>
+
+            <button onclick="openExperiment('cultivation')">
+                Start Experiment →
+            </button>
+
+        </div>
+
+
+        <div class="experiment-card">
+
+            <div class="experiment-number">
+                04
+            </div>
+
+            <h3>
+                Bacterial Staining
+            </h3>
+
+            <p>
+                Explore staining concepts and identify
+                simulated bacterial observations.
+            </p>
+
+            <button onclick="openExperiment('staining')">
+                Start Experiment →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- About -->
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <p class="small-title">
+            ABOUT MICROLABSIM
+        </p>
+
+        <h2>
+            A Digital Laboratory for Practical Learning
+        </h2>
+
+        <p>
+            MicroLabSim is designed to support microbiology
+            practical learning by providing an interactive
+            virtual laboratory environment where students
+            can learn, practice and assess their understanding.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+<footer id="contact">
+
+    <div class="footer-content">
+
+        <div>
+            <h3>🔬 MicroLabSim</h3>
+
+            <p>
+                Interactive Microbiology Practical
+                Simulation and Learning System.
+            </p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+
+            <a href="#home">Home</a>
+            <a href="#experiments">Experiments</a>
+            <a href="#about">About</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 MicroLabSim. All Rights Reserved.
+    </div>
+
+</footer>
+
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

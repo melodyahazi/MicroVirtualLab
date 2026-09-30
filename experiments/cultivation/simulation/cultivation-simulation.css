@@ -1,0 +1,1530 @@
+/* =========================================
+   EXPERIMENT 03
+   CULTIVATION OF BACTERIA
+   VIRTUAL PRACTICAL
+========================================= */
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.simulation-navbar {
+    height: 72px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #0f172a;
+
+    font-size: 20px;
+}
+
+.brand span {
+    font-size: 27px;
+}
+
+.back-link {
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.simulation-container {
+    width: 90%;
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 45px 0 70px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.simulation-header {
+    max-width: 850px;
+
+    margin: 0 auto 35px;
+
+    text-align: center;
+}
+
+.simulation-label {
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 9px;
+}
+
+.simulation-header h1 {
+    color: #0f172a;
+
+    font-size: 38px;
+
+    margin-bottom: 14px;
+}
+
+.simulation-header p {
+    color: #64748b;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-section {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 18px 22px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+.progress-info {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: #475569;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+#progressPercent {
+    color: #2563eb;
+}
+
+.progress-bar {
+    height: 8px;
+
+    width: 100%;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+
+    width: 12.5%;
+
+    background: #2563eb;
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================================
+   WORKSPACE
+========================================= */
+
+.workspace {
+    display: grid;
+
+    grid-template-columns: 1.45fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   PANELS
+========================================= */
+
+.laboratory-panel,
+.instruction-panel {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================
+   PANEL HEADER
+========================================= */
+
+.panel-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.panel-icon {
+    width: 50px;
+
+    height: 50px;
+
+    background: #eff6ff;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.small-label {
+    color: #2563eb;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.4px;
+
+    margin-bottom: 2px;
+}
+
+.panel-header h2 {
+    color: #0f172a;
+
+    font-size: 23px;
+}
+
+
+/* =========================================
+   LAB BENCH
+========================================= */
+
+.lab-bench {
+    position: relative;
+
+    width: 100%;
+
+    height: 470px;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    border: 2px solid #cbd5e1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #e7edf3 0%,
+            #e7edf3 76%,
+            #cbd5e1 76%,
+            #cbd5e1 100%
+        );
+
+    box-shadow:
+        inset 0 0 30px rgba(15, 23, 42, 0.06);
+}
+
+
+/* =========================================
+   EQUIPMENT
+========================================= */
+
+.equipment {
+    position: absolute;
+
+    text-align: center;
+
+    color: #475569;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+}
+
+.equipment > span {
+    display: block;
+
+    margin-top: 7px;
+}
+
+
+/* =========================================
+   WORK AREA
+========================================= */
+
+.work-area {
+    position: absolute;
+
+    left: 7%;
+    top: 7%;
+
+    width: 180px;
+
+    height: 80px;
+
+    border: 2px solid #94a3b8;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    letter-spacing: 0.5px;
+}
+
+.work-area::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 3px;
+
+    background: #cbd5e1;
+
+    top: 20px;
+}
+
+.work-area::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+
+    height: 3px;
+
+    background: #cbd5e1;
+
+    bottom: 20px;
+}
+
+.work-surface {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   BACTERIAL SAMPLE
+========================================= */
+
+.bacterial-sample {
+    left: 39%;
+
+    top: 8%;
+}
+
+.sample-tube {
+    width: 34px;
+
+    height: 100px;
+
+    margin: auto;
+
+    border: 3px solid #94a3b8;
+
+    border-radius: 7px 7px 15px 15px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.sample-tube::before {
+    content: "";
+
+    position: absolute;
+
+    width: 38px;
+
+    height: 12px;
+
+    left: -5px;
+
+    top: -4px;
+
+    background: #cbd5e1;
+
+    border: 2px solid #64748b;
+
+    border-radius: 4px;
+}
+
+.sample-liquid {
+    position: absolute;
+
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+
+    height: 42px;
+
+    background: #dceccf;
+
+    border-radius: 4px 4px 11px 11px;
+}
+
+.sample-liquid::after {
+    content: "";
+
+    position: absolute;
+
+    width: 5px;
+
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #64748b;
+
+    top: 12px;
+    left: 10px;
+
+    box-shadow:
+        10px 5px 0 #7c8b70,
+        5px 17px 0 #71806a;
+}
+
+
+/* =========================================
+   INOCULATING LOOP
+========================================= */
+
+.inoculating-loop {
+    left: 58%;
+
+    top: 10%;
+}
+
+.loop-handle {
+    width: 100px;
+
+    height: 10px;
+
+    background: #64748b;
+
+    border-radius: 10px;
+
+    transform: rotate(-18deg);
+
+    margin: 35px auto 0;
+}
+
+.loop-wire {
+    position: absolute;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: 4px solid #94a3b8;
+
+    border-left-color: transparent;
+
+    border-bottom-color: transparent;
+
+    border-radius: 50%;
+
+    transform: rotate(35deg);
+
+    top: 7px;
+
+    right: 3px;
+}
+
+.loop-ring {
+    display: none;
+}
+
+
+/* =========================================
+   PETRI DISH
+========================================= */
+
+.petri-dish {
+    left: 15%;
+
+    top: 49%;
+}
+
+.dish-lid {
+    width: 145px;
+
+    height: 28px;
+
+    margin: auto;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 3px solid #94a3b8;
+
+    border-radius: 50%;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+.dish-content {
+    width: 137px;
+
+    height: 54px;
+
+    margin: -14px auto 0;
+
+    border: 3px solid #94a3b8;
+
+    border-radius: 50%;
+
+    background: #f3ebc5;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.growth {
+    position: absolute;
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #8b956d;
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+}
+
+.growth-1 {
+    left: 25px;
+    top: 20px;
+}
+
+.growth-2 {
+    left: 53px;
+    top: 13px;
+}
+
+.growth-3 {
+    left: 81px;
+    top: 25px;
+}
+
+.growth-4 {
+    left: 105px;
+    top: 15px;
+}
+
+
+/* =========================================
+   BUNSEN BURNER
+========================================= */
+
+.burner {
+    left: 49%;
+
+    top: 51%;
+}
+
+.burner-body {
+    width: 35px;
+
+    height: 78px;
+
+    background: #94a3b8;
+
+    border: 2px solid #64748b;
+
+    border-radius: 5px 5px 9px 9px;
+
+    margin: auto;
+}
+
+.burner-body::before {
+    content: "";
+
+    display: block;
+
+    width: 70px;
+
+    height: 14px;
+
+    background: #64748b;
+
+    border-radius: 50%;
+
+    margin-left: -20px;
+
+    margin-top: -5px;
+}
+
+.burner-flame {
+    height: 40px;
+
+    font-size: 30px;
+
+    opacity: 0.15;
+
+    transition: 0.3s ease;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.label-item {
+    left: 73%;
+
+    top: 53%;
+}
+
+.label-paper {
+    width: 90px;
+
+    height: 48px;
+
+    background: #ffffff;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #334155;
+
+    font-size: 10px;
+
+    transform: rotate(-5deg);
+
+    box-shadow:
+        0 4px 8px rgba(15, 23, 42, 0.1);
+}
+
+
+/* =========================================
+   INCUBATOR
+========================================= */
+
+.incubator {
+    left: 73%;
+
+    top: 8%;
+}
+
+.incubator-body {
+    width: 130px;
+
+    height: 115px;
+
+    background: #cbd5e1;
+
+    border: 4px solid #64748b;
+
+    border-radius: 12px;
+
+    padding: 10px;
+}
+
+.incubator-door {
+    width: 100%;
+
+    height: 68px;
+
+    background: #e2e8f0;
+
+    border: 2px solid #94a3b8;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #475569;
+
+    font-size: 10px;
+}
+
+.incubator-display {
+    margin: 7px auto 0;
+
+    width: 75px;
+
+    padding: 4px;
+
+    background: #1e293b;
+
+    color: #86efac;
+
+    border-radius: 4px;
+
+    font-family: monospace;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   ACTIVE EQUIPMENT
+========================================= */
+
+.equipment.active {
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 5px 10px rgba(37, 99, 235, 0.25)
+        );
+}
+
+
+/* =========================================
+   LAB STATUS
+========================================= */
+
+.lab-status {
+    margin-top: 18px;
+
+    padding: 15px 17px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.status-icon {
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.lab-status p {
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   INSTRUCTION PANEL
+========================================= */
+
+.instruction-panel {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.instruction-label {
+    color: #2563eb;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+.instruction-panel h2 {
+    color: #0f172a;
+
+    font-size: 26px;
+
+    line-height: 1.25;
+
+    margin-bottom: 12px;
+}
+
+.instruction-panel > p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+
+/* =========================================
+   ACTION AREA
+========================================= */
+
+.action-area {
+    flex: 1;
+
+    min-height: 180px;
+
+    background: #f8fafc;
+
+    border: 1px dashed #cbd5e1;
+
+    border-radius: 10px;
+
+    padding: 18px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   ACTION CHOICES
+========================================= */
+
+.action-choice {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    margin-bottom: 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #dbe3ec;
+
+    border-radius: 8px;
+
+    color: #334155;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.action-choice:hover {
+    background: #eff6ff;
+
+    border-color: #2563eb;
+}
+
+.action-choice:last-child {
+    margin-bottom: 0;
+}
+
+.action-choice:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.feedback {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    margin-bottom: 18px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 10px;
+}
+
+.feedback-icon {
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-weight: bold;
+}
+
+.feedback strong {
+    display: block;
+
+    color: #166534;
+
+    margin-bottom: 3px;
+}
+
+.feedback p {
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+.feedback.wrong {
+    background: #fef2f2;
+
+    border-color: #fecaca;
+}
+
+.feedback.wrong .feedback-icon {
+    background: #dc2626;
+}
+
+.feedback.wrong strong {
+    color: #991b1b;
+}
+
+
+/* =========================================
+   ACTION BUTTON
+========================================= */
+
+.action-button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    padding: 14px 20px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.action-button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+.action-button:disabled {
+    background: #94a3b8;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================
+   OBSERVATION SECTION
+========================================= */
+
+.observation-section {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 22px;
+}
+
+.heading-icon {
+    width: 48px;
+
+    height: 48px;
+
+    background: #eff6ff;
+
+    border-radius: 11px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 24px;
+}
+
+.section-heading h2 {
+    color: #0f172a;
+
+    font-size: 22px;
+}
+
+
+/* =========================================
+   OBSERVATION CONTENT
+========================================= */
+
+.observation-content {
+    display: grid;
+
+    grid-template-columns: 220px 1fr;
+
+    gap: 25px;
+
+    align-items: center;
+}
+
+.observation-plate {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 150px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+}
+
+.observation-dish {
+    position: relative;
+
+    width: 145px;
+
+    height: 75px;
+
+    background: #f3ebc5;
+
+    border: 4px solid #94a3b8;
+
+    border-radius: 50%;
+
+    box-shadow:
+        inset 0 4px 8px rgba(100, 90, 60, 0.12);
+}
+
+.colony {
+    position: absolute;
+
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: #89966d;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.4s ease;
+}
+
+.colony-a {
+    left: 27px;
+    top: 29px;
+}
+
+.colony-b {
+    left: 55px;
+    top: 20px;
+}
+
+.colony-c {
+    left: 83px;
+    top: 35px;
+}
+
+.colony-d {
+    left: 107px;
+    top: 24px;
+}
+
+.colony-e {
+    left: 68px;
+    top: 47px;
+}
+
+.observation-dish.growth-visible .colony {
+    opacity: 1;
+
+    transform: scale(1.15);
+}
+
+.observation-text h3 {
+    color: #0f172a;
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+.observation-text p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RESULT SECTION
+========================================= */
+
+.result-section {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 50px 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.05);
+}
+
+.result-icon {
+    font-size: 58px;
+
+    margin-bottom: 12px;
+}
+
+.result-section h2 {
+    color: #0f172a;
+
+    font-size: 31px;
+
+    margin-bottom: 10px;
+}
+
+.result-section > p {
+    max-width: 650px;
+
+    margin: 0 auto 28px;
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   RESULT SUMMARY
+========================================= */
+
+.result-summary {
+    max-width: 500px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.result-box {
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+}
+
+.result-box span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.result-box strong {
+    color: #2563eb;
+
+    font-size: 24px;
+}
+
+
+/* =========================================
+   FINAL OBSERVATION
+========================================= */
+
+.final-observation {
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    padding: 18px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 10px;
+
+    text-align: left;
+}
+
+.final-observation h3 {
+    color: #1e3a8a;
+
+    font-size: 15px;
+
+    margin-bottom: 5px;
+}
+
+.final-observation p {
+    color: #475569;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   DASHBOARD BUTTON
+========================================= */
+
+.dashboard-button {
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    padding: 14px 26px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.dashboard-button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   HIDDEN
+========================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .observation-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .simulation-container {
+        width: 94%;
+
+        padding-top: 30px;
+    }
+
+    .simulation-navbar {
+        padding: 0 4%;
+    }
+
+    .simulation-header h1 {
+        font-size: 31px;
+    }
+
+    .laboratory-panel,
+    .instruction-panel,
+    .observation-section {
+        padding: 20px;
+    }
+
+    .lab-bench {
+        height: 390px;
+    }
+
+    .result-summary {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .simulation-navbar {
+        height: 65px;
+    }
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .back-link {
+        font-size: 12px;
+    }
+
+    .simulation-header h1 {
+        font-size: 27px;
+    }
+
+    .lab-bench {
+        height: 340px;
+    }
+
+    .work-area {
+        transform: scale(0.7);
+
+        transform-origin: top left;
+    }
+
+    .bacterial-sample {
+        left: 34%;
+
+        transform: scale(0.75);
+
+        transform-origin: top center;
+    }
+
+    .inoculating-loop {
+        left: 54%;
+
+        transform: scale(0.7);
+
+        transform-origin: top center;
+    }
+
+    .incubator {
+        left: 67%;
+
+        transform: scale(0.6);
+
+        transform-origin: top left;
+    }
+
+    .petri-dish {
+        left: 8%;
+
+        transform: scale(0.75);
+
+        transform-origin: top left;
+    }
+
+    .burner {
+        left: 48%;
+
+        transform: scale(0.75);
+
+        transform-origin: top center;
+    }
+
+    .label-item {
+        left: 70%;
+
+        transform: scale(0.7);
+
+        transform-origin: top left;
+    }
+}

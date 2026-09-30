@@ -1,0 +1,1151 @@
+/* =========================================================
+   MICROVIRTUALLAB
+   EXPERIMENT 05 — FOOD ANALYSIS
+   GENERAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.experiment-header {
+    width: 100%;
+    min-height: 80px;
+
+    background: #0f766e;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 15px 6%;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+
+    background: white;
+    color: #0f766e;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.header-left h1 {
+    font-size: 23px;
+    margin-bottom: 2px;
+}
+
+.header-left p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.experiment-badge {
+    background: rgba(255, 255, 255, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.experiment-container {
+    width: min(1100px, 92%);
+    margin: 35px auto 50px;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.intro-section {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 22px;
+
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.07);
+
+    margin-bottom: 28px;
+}
+
+.intro-icon {
+    min-width: 68px;
+    width: 68px;
+    height: 68px;
+
+    border-radius: 16px;
+
+    background: #ccfbf1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 34px;
+}
+
+.intro-content h2 {
+    color: #0f766e;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.intro-content p {
+    color: #475569;
+
+    font-size: 16px;
+
+    margin-bottom: 16px;
+}
+
+.source-note {
+    background: #f0fdfa;
+
+    border-left: 4px solid #14b8a6;
+
+    padding: 12px 15px;
+
+    border-radius: 6px;
+
+    color: #334155;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   GENERAL SECTION
+========================================================= */
+
+.objectives-section,
+.concepts-section,
+.start-section,
+.information-section {
+    margin-bottom: 30px;
+}
+
+.objectives-section h2,
+.concepts-section h2 {
+    color: #0f172a;
+
+    font-size: 24px;
+
+    margin-bottom: 8px;
+}
+
+.section-introduction {
+    color: #64748b;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   OBJECTIVES
+========================================================= */
+
+.objectives-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+.objective-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    border: 1px solid #e2e8f0;
+
+    transition: 0.25s ease;
+}
+
+.objective-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.objective-number {
+    min-width: 42px;
+    height: 42px;
+
+    border-radius: 10px;
+
+    background: #0f766e;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+
+    font-size: 13px;
+}
+
+.objective-card h3 {
+    font-size: 17px;
+
+    margin-bottom: 5px;
+
+    color: #1e293b;
+}
+
+.objective-card p {
+    font-size: 14px;
+
+    color: #64748b;
+}
+
+
+/* =========================================================
+   KEY CONCEPTS
+========================================================= */
+
+.concepts-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.concept-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 24px 18px;
+
+    text-align: center;
+
+    border: 1px solid #e2e8f0;
+
+    transition: 0.25s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.concept-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 14px;
+
+    border-radius: 50%;
+
+    background: #ccfbf1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.concept-card h3 {
+    color: #0f766e;
+
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.concept-card p {
+    color: #64748b;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   START ACTIVITY
+========================================================= */
+
+.start-card {
+    background: linear-gradient(
+        135deg,
+        #0f766e,
+        #115e59
+    );
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    box-shadow: 0 8px 22px rgba(15, 118, 110, 0.18);
+}
+
+.start-icon {
+    width: 75px;
+    height: 75px;
+
+    min-width: 75px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 36px;
+}
+
+.start-content h2 {
+    font-size: 25px;
+
+    margin-bottom: 7px;
+}
+
+.start-content p {
+    color: rgba(255, 255, 255, 0.9);
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-button,
+.secondary-button {
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.primary-button {
+    background: #14b8a6;
+
+    color: white;
+}
+
+.primary-button:hover {
+    background: #0d9488;
+
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    background: #e2e8f0;
+
+    color: #334155;
+}
+
+.secondary-button:hover {
+    background: #cbd5e1;
+
+    transform: translateY(-2px);
+}
+
+.start-card .primary-button {
+    background: white;
+
+    color: #0f766e;
+}
+
+.start-card .primary-button:hover {
+    background: #f0fdfa;
+}
+
+
+/* =========================================================
+   QUIZ SECTION
+========================================================= */
+
+.quiz-section {
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.07);
+
+    margin-bottom: 30px;
+}
+
+.quiz-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.quiz-label {
+    display: inline-block;
+
+    color: #0f766e;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 0.7px;
+
+    margin-bottom: 5px;
+}
+
+.quiz-header h2 {
+    color: #0f172a;
+
+    font-size: 25px;
+}
+
+.score-display {
+    min-width: 105px;
+
+    padding: 12px 18px;
+
+    background: #f0fdfa;
+
+    border: 1px solid #99f6e4;
+
+    border-radius: 12px;
+
+    text-align: center;
+}
+
+.score-display span {
+    display: block;
+
+    font-size: 12px;
+
+    color: #64748b;
+}
+
+.score-display strong {
+    display: block;
+
+    color: #0f766e;
+
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-area {
+    margin-bottom: 25px;
+}
+
+.progress-information {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 10px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background: #14b8a6;
+
+    border-radius: 20px;
+
+    transition: width 0.35s ease;
+}
+
+
+/* =========================================================
+   QUESTION CARD
+========================================================= */
+
+.question-card {
+    border: 1px solid #e2e8f0;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    position: relative;
+}
+
+.question-number {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 12px;
+
+    background: #ccfbf1;
+
+    color: #0f766e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.question-card h3 {
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    color: #1e293b;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   ANSWER OPTIONS
+========================================================= */
+
+.answer-options {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+}
+
+.answer-option {
+    width: 100%;
+
+    text-align: left;
+
+    border: 2px solid #e2e8f0;
+
+    background: white;
+
+    color: #334155;
+
+    padding: 16px 18px;
+
+    border-radius: 11px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    transition: 0.2s ease;
+}
+
+.answer-option:hover {
+    border-color: #14b8a6;
+
+    background: #f0fdfa;
+
+    transform: translateX(3px);
+}
+
+.option-letter {
+    min-width: 35px;
+    width: 35px;
+    height: 35px;
+
+    border-radius: 9px;
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.answer-option.correct {
+    border-color: #16a34a;
+
+    background: #f0fdf4;
+
+    color: #166534;
+}
+
+.answer-option.correct .option-letter {
+    background: #16a34a;
+
+    color: white;
+}
+
+.answer-option.incorrect {
+    border-color: #dc2626;
+
+    background: #fef2f2;
+
+    color: #991b1b;
+}
+
+.answer-option.incorrect .option-letter {
+    background: #dc2626;
+
+    color: white;
+}
+
+.answer-option.disabled {
+    cursor: default;
+}
+
+
+/* =========================================================
+   FEEDBACK
+========================================================= */
+
+.feedback {
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+.feedback.correct-feedback {
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+}
+
+.feedback.incorrect-feedback {
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+}
+
+.feedback-icon {
+    width: 38px;
+    height: 38px;
+
+    min-width: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #16a34a;
+
+    color: white;
+
+    font-weight: bold;
+}
+
+.feedback.incorrect-feedback .feedback-icon {
+    background: #dc2626;
+}
+
+.feedback h3 {
+    font-size: 16px;
+
+    margin-bottom: 4px;
+}
+
+.feedback p {
+    color: #475569;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   QUIZ CONTROLS
+========================================================= */
+
+.quiz-controls {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================================
+   RESULT SECTION
+========================================================= */
+
+.result-section {
+    margin-bottom: 30px;
+}
+
+.result-card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    box-shadow: 0 7px 25px rgba(15, 23, 42, 0.09);
+}
+
+.result-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #fef3c7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 38px;
+}
+
+.result-card h2 {
+    color: #0f172a;
+
+    font-size: 28px;
+
+    margin-bottom: 4px;
+}
+
+.result-subtitle {
+    color: #64748b;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   FINAL SCORE
+========================================================= */
+
+.final-score-container {
+    margin-bottom: 25px;
+}
+
+.final-score-container span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-bottom: 4px;
+}
+
+.final-score {
+    font-size: 58px;
+
+    font-weight: bold;
+
+    color: #0f766e;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   PERFORMANCE
+========================================================= */
+
+.performance-container {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    padding: 18px;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+}
+
+.performance-container h3 {
+    color: #0f766e;
+
+    font-size: 20px;
+
+    margin-bottom: 6px;
+}
+
+.performance-container p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESULT SUMMARY
+========================================================= */
+
+.result-summary {
+    max-width: 700px;
+
+    margin: 0 auto 28px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.summary-item {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 16px;
+}
+
+.summary-item span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.summary-item strong {
+    color: #0f172a;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   RESULT ACTIONS
+========================================================= */
+
+.result-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.info-box {
+    background: white;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 25px;
+}
+
+.info-box h3 {
+    color: #1e293b;
+
+    font-size: 16px;
+
+    margin-bottom: 3px;
+}
+
+.info-box p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.experiment-footer {
+    background: #0f172a;
+
+    color: #cbd5e1;
+
+    text-align: center;
+
+    padding: 22px 15px;
+
+    font-size: 13px;
+}
+
+.experiment-footer p:first-child {
+    margin-bottom: 4px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .concepts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .experiment-header {
+        padding: 13px 4%;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+    .experiment-badge {
+        align-self: flex-start;
+    }
+
+    .experiment-container {
+        width: 94%;
+
+        margin-top: 22px;
+    }
+
+    .intro-section {
+        padding: 22px;
+
+        flex-direction: column;
+    }
+
+    .intro-content h2 {
+        font-size: 23px;
+    }
+
+    .objectives-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .concepts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .start-card {
+        padding: 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .quiz-section {
+        padding: 20px;
+    }
+
+    .quiz-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .question-card {
+        padding: 20px;
+    }
+
+    .question-card h3 {
+        font-size: 18px;
+    }
+
+    .result-summary {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .header-left h1 {
+        font-size: 20px;
+    }
+
+    .header-left p {
+        font-size: 11px;
+    }
+
+    .logo-icon {
+        width: 42px;
+        height: 42px;
+
+        font-size: 21px;
+    }
+
+    .intro-section {
+        padding: 18px;
+    }
+
+    .objective-card {
+        padding: 16px;
+    }
+
+    .start-card {
+        padding: 20px;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .answer-option {
+        padding: 13px;
+    }
+
+}

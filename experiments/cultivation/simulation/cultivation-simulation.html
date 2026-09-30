@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cultivation of Bacteria | Virtual Practical</title>
+
+    <link rel="stylesheet"
+          href="cultivation-simulation.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
+    <nav class="simulation-navbar">
+
+        <div class="brand">
+            <span>🔬</span>
+            <strong>MicroVirtualLab</strong>
+        </div>
+
+        <a href="../cultivation.html"
+           class="back-link">
+            ← Exit Experiment
+        </a>
+
+    </nav>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="simulation-container">
+
+
+        <!-- HEADER -->
+
+        <header class="simulation-header">
+
+            <div class="simulation-label">
+                EXPERIMENT 03 • VIRTUAL PRACTICAL
+            </div>
+
+            <h1>
+                Cultivation of Bacteria
+            </h1>
+
+            <p>
+                Perform the bacterial cultivation procedure
+                step by step and observe simulated bacterial
+                growth.
+            </p>
+
+        </header>
+
+
+        <!-- =========================================
+             PROGRESS
+        ========================================== -->
+
+        <section class="progress-section">
+
+            <div class="progress-info">
+
+                <span id="stepNumber">
+                    Step 1 of 8
+                </span>
+
+                <span id="progressPercent">
+                    13%
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"
+                     class="progress-fill">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             WORKSPACE
+        ========================================== -->
+
+        <section class="workspace">
+
+
+            <!-- =====================================
+                 LABORATORY
+            ====================================== -->
+
+            <div class="laboratory-panel">
+
+                <div class="panel-header">
+
+                    <div class="panel-icon">
+                        🧫
+                    </div>
+
+                    <div>
+
+                        <div class="small-label">
+                            VIRTUAL LABORATORY
+                        </div>
+
+                        <h2>
+                            Cultivation Work Area
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LAB BENCH -->
+
+                <div class="lab-bench"
+                     id="labBench">
+
+
+                    <!-- WORK AREA -->
+
+                    <div class="work-area"
+                         id="workArea">
+
+                        <div class="work-surface">
+
+                            CLEAN WORK AREA
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BACTERIAL SAMPLE -->
+
+                    <div class="equipment bacterial-sample"
+                         id="bacterialSample">
+
+                        <div class="sample-tube">
+
+                            <div class="sample-liquid">
+                            </div>
+
+                        </div>
+
+                        <span>
+                            Bacterial Sample
+                        </span>
+
+                    </div>
+
+
+                    <!-- INOCULATING LOOP -->
+
+                    <div class="equipment inoculating-loop"
+                         id="inoculatingLoop">
+
+                        <div class="loop-handle">
+                        </div>
+
+                        <div class="loop-wire">
+                        </div>
+
+                        <div class="loop-ring">
+                        </div>
+
+                        <span>
+                            Inoculating Loop
+                        </span>
+
+                    </div>
+
+
+                    <!-- PETRI DISH -->
+
+                    <div class="equipment petri-dish"
+                         id="petriDish">
+
+                        <div class="dish-lid">
+                        </div>
+
+                        <div class="dish-content">
+
+                            <div class="growth growth-1">
+                            </div>
+
+                            <div class="growth growth-2">
+                            </div>
+
+                            <div class="growth growth-3">
+                            </div>
+
+                            <div class="growth growth-4">
+                            </div>
+
+                        </div>
+
+                        <span>
+                            Culture Plate
+                        </span>
+
+                    </div>
+
+
+                    <!-- BUNSEN BURNER -->
+
+                    <div class="equipment burner"
+                         id="burner">
+
+                        <div class="burner-body">
+                        </div>
+
+                        <div class="burner-flame"
+                             id="burnerFlame">
+                            🔥
+                        </div>
+
+                        <span>
+                            Bunsen Burner
+                        </span>
+
+                    </div>
+
+
+                    <!-- LABEL -->
+
+                    <div class="equipment label-item"
+                         id="labelItem">
+
+                        <div class="label-paper">
+                            CULTURE
+                        </div>
+
+                        <span>
+                            Label
+                        </span>
+
+                    </div>
+
+
+                    <!-- INCUBATOR -->
+
+                    <div class="equipment incubator"
+                         id="incubator">
+
+                        <div class="incubator-body">
+
+                            <div class="incubator-door">
+
+                                INCUBATOR
+
+                            </div>
+
+                            <div class="incubator-display"
+                                 id="incubatorDisplay">
+
+                                READY
+
+                            </div>
+
+                        </div>
+
+                        <span>
+                            Incubator
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="lab-status"
+                     id="labStatus">
+
+                    <span class="status-icon">
+                        🔬
+                    </span>
+
+                    <p>
+                        Follow the current instruction and
+                        select the appropriate laboratory action.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 INSTRUCTIONS
+            ====================================== -->
+
+            <div class="instruction-panel">
+
+                <div class="instruction-label">
+                    CURRENT PROCEDURE
+                </div>
+
+                <h2 id="stepTitle">
+                    Prepare the Work Area
+                </h2>
+
+                <p id="stepDescription">
+                    Organize and prepare the virtual laboratory
+                    work area before beginning the cultivation
+                    procedure.
+                </p>
+
+
+                <!-- ACTION AREA -->
+
+                <div id="actionArea"
+                     class="action-area">
+                </div>
+
+
+                <!-- FEEDBACK -->
+
+                <div id="feedback"
+                     class="feedback hidden">
+
+                    <div id="feedbackIcon"
+                         class="feedback-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong id="feedbackTitle">
+                            Correct
+                        </strong>
+
+                        <p id="feedbackText">
+                            Good laboratory practice.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NEXT BUTTON -->
+
+                <button type="button"
+                        id="actionButton"
+                        class="action-button">
+
+                    Perform Action →
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             OBSERVATION PANEL
+        ========================================== -->
+
+        <section class="observation-section">
+
+            <div class="section-heading">
+
+                <div class="heading-icon">
+                    🔎
+                </div>
+
+                <div>
+
+                    <div class="small-label">
+                        OBSERVATION
+                    </div>
+
+                    <h2>
+                        Bacterial Growth Observation
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="observation-content">
+
+                <div class="observation-plate">
+
+                    <div class="observation-dish">
+
+                        <div class="colony colony-a">
+                        </div>
+
+                        <div class="colony colony-b">
+                        </div>
+
+                        <div class="colony colony-c">
+                        </div>
+
+                        <div class="colony colony-d">
+                        </div>
+
+                        <div class="colony colony-e">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="observation-text">
+
+                    <h3 id="observationTitle">
+                        No growth observed yet
+                    </h3>
+
+                    <p id="observationDescription">
+                        Complete the cultivation procedure
+                        and incubation stage to observe the
+                        simulated bacterial growth.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             RESULT
+        ========================================== -->
+
+        <section id="resultSection"
+                 class="result-section hidden">
+
+            <div class="result-icon">
+                🏆
+            </div>
+
+            <div class="simulation-label">
+                PRACTICAL COMPLETED
+            </div>
+
+            <h2>
+                Cultivation Completed!
+            </h2>
+
+            <p>
+                You have completed the virtual bacterial
+                cultivation procedure and observed the
+                simulated culture growth.
+            </p>
+
+
+            <div class="result-summary">
+
+                <div class="result-box">
+
+                    <span>
+                        Steps Completed
+                    </span>
+
+                    <strong id="completedSteps">
+                        8 / 8
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>
+                        Performance
+                    </span>
+
+                    <strong id="finalPerformance">
+                        Excellent
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="final-observation">
+
+                <h3>
+                    Final Observation
+                </h3>
+
+                <p id="finalObservation">
+                    Simulated bacterial colonies are visible
+                    on the culture plate following the
+                    cultivation and incubation stages.
+                </p>
+
+            </div>
+
+
+            <button type="button"
+                    id="dashboardButton"
+                    class="dashboard-button">
+
+                Return to Dashboard
+
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script src="cultivation-simulation.js"></script>
+
+</body>
+
+</html>

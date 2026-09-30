@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bacteria Staining Simulation | MicroVirtualLab</title>
+
+    <link rel="stylesheet" href="bacteria-staining-simulation.css">
+</head>
+
+<body>
+
+<!-- =========================================
+     SIMULATION NAVBAR
+========================================= -->
+
+<header class="simulation-navbar">
+
+    <div class="brand">
+        🔬 MicroVirtualLab
+    </div>
+
+    <div class="simulation-title">
+        Experiment 04 — Bacteria Staining
+    </div>
+
+    <a href="../../dashboard.html" class="back-link">
+        ← Dashboard
+    </a>
+
+</header>
+
+
+<!-- =========================================
+     SIMULATION CONTAINER
+========================================= -->
+
+<main class="simulation-container">
+
+
+    <!-- =====================================
+         PROGRESS HEADER
+    ====================================== -->
+
+    <section class="progress-section">
+
+        <div class="progress-info">
+
+            <span id="stepNumber">
+                Step 1 of 8
+            </span>
+
+            <span id="progressPercent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                id="progressFill"
+                class="progress-fill">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SIMULATION HEADER
+    ====================================== -->
+
+    <section class="simulation-header">
+
+        <span class="experiment-badge">
+            VIRTUAL PRACTICAL
+        </span>
+
+        <h1 id="stepTitle">
+            Prepare the Virtual Workspace
+        </h1>
+
+        <p id="stepDescription">
+            Review the virtual laboratory setup and prepare the workspace
+            before beginning the staining activity.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================
+         LABORATORY AREA
+    ====================================== -->
+
+    <section class="laboratory">
+
+        <div class="lab-header">
+
+            <h2>🧪 Virtual Laboratory</h2>
+
+            <div class="lab-status">
+                Status:
+                <span id="labStatus">
+                    Ready
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- EQUIPMENT -->
+
+        <div class="equipment-area">
+
+            <!-- WORK AREA -->
+
+            <div
+                class="equipment"
+                id="workArea">
+
+                <div class="equipment-icon">
+                    🧰
+                </div>
+
+                <h3>Work Area</h3>
+
+                <p>
+                    Virtual workspace
+                </p>
+
+            </div>
+
+
+            <!-- SLIDE -->
+
+            <div
+                class="equipment"
+                id="slide">
+
+                <div class="equipment-icon">
+                    🔬
+                </div>
+
+                <h3>Microscope Slide</h3>
+
+                <p>
+                    Virtual bacterial sample
+                </p>
+
+            </div>
+
+
+            <!-- STAIN -->
+
+            <div
+                class="equipment"
+                id="stain">
+
+                <div class="equipment-icon">
+                    💧
+                </div>
+
+                <h3>Staining Reagent</h3>
+
+                <p>
+                    Virtual dye
+                </p>
+
+            </div>
+
+
+            <!-- WATER -->
+
+            <div
+                class="equipment"
+                id="wash">
+
+                <div class="equipment-icon">
+                    🚿
+                </div>
+
+                <h3>Rinse Station</h3>
+
+                <p>
+                    Virtual washing stage
+                </p>
+
+            </div>
+
+
+            <!-- MICROSCOPE -->
+
+            <div
+                class="equipment"
+                id="microscope">
+
+                <div class="equipment-icon">
+                    🔭
+                </div>
+
+                <h3>Microscope</h3>
+
+                <p>
+                    Virtual observation
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================
+             VIRTUAL SLIDE
+        ================================== -->
+
+        <div class="slide-area">
+
+            <div class="virtual-slide">
+
+                <div class="slide-label">
+                    VIRTUAL SLIDE
+                </div>
+
+                <div
+                    id="bacterialSample"
+                    class="bacterial-sample">
+
+                    <span class="bacteria bacteria-1"></span>
+                    <span class="bacteria bacteria-2"></span>
+                    <span class="bacteria bacteria-3"></span>
+                    <span class="bacteria bacteria-4"></span>
+                    <span class="bacteria bacteria-5"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         INSTRUCTION
+    ====================================== -->
+
+    <section class="instruction-card">
+
+        <div class="instruction-icon">
+            💡
+        </div>
+
+        <div>
+
+            <h3>What should you do?</h3>
+
+            <p>
+                Select the action that best represents the appropriate
+                next step in the virtual bacteria-staining activity.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ACTION AREA
+    ====================================== -->
+
+    <section class="action-section">
+
+        <h2 id="actionHeading">
+            Select an Action
+        </h2>
+
+        <div id="actionArea" class="action-area">
+            <!-- JavaScript inserts actions here -->
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         FEEDBACK
+    ====================================== -->
+
+    <section
+        id="feedback"
+        class="feedback hidden">
+
+        <div
+            id="feedbackIcon"
+            class="feedback-icon">
+            ✓
+        </div>
+
+        <div>
+
+            <h3 id="feedbackTitle">
+                Correct!
+            </h3>
+
+            <p id="feedbackText">
+                Good choice.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         ACTION BUTTON
+    ====================================== -->
+
+    <div class="button-container">
+
+        <button
+            id="actionButton"
+            class="action-button"
+            disabled>
+
+            Continue →
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================
+         OBSERVATION SECTION
+    ====================================== -->
+
+    <section
+        id="observationSection"
+        class="observation-section hidden">
+
+        <div class="observation-header">
+
+            <span class="observation-icon">
+                🔬
+            </span>
+
+            <div>
+
+                <h2 id="observationTitle">
+                    Virtual Observation
+                </h2>
+
+                <p id="observationDescription">
+                    Observe the simulated stained bacterial sample.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="observation-dish">
+
+            <div class="observation-cell cell-1"></div>
+            <div class="observation-cell cell-2"></div>
+            <div class="observation-cell cell-3"></div>
+            <div class="observation-cell cell-4"></div>
+            <div class="observation-cell cell-5"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         RESULT SECTION
+    ====================================== -->
+
+    <section
+        id="resultSection"
+        class="result-section hidden">
+
+        <div class="result-icon">
+            🎉
+        </div>
+
+        <h2>
+            Simulation Completed!
+        </h2>
+
+        <p>
+            You have completed the Bacteria Staining virtual practical.
+        </p>
+
+        <div class="result-stats">
+
+            <div class="result-stat">
+
+                <span class="stat-label">
+                    Completed Steps
+                </span>
+
+                <strong id="completedSteps">
+                    0 / 8
+                </strong>
+
+            </div>
+
+            <div class="result-stat">
+
+                <span class="stat-label">
+                    Performance
+                </span>
+
+                <strong id="finalPerformance">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+        <button
+            id="dashboardButton"
+            class="dashboard-button">
+
+            Return to Dashboard
+
+        </button>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="bacteria-staining-simulation.js"></script>
+
+</body>
+</html>

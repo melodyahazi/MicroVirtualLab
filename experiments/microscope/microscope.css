@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.experiment-navbar {
+    height: 75px;
+    padding: 0 7%;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 20px;
+}
+
+.brand span {
+    font-size: 28px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #1677ff;
+    font-weight: 600;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.experiment-container {
+    width: 86%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.experiment-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.experiment-label,
+.simulation-label {
+    color: #1677ff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.experiment-header h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.experiment-header p {
+    color: #64748b;
+    font-size: 17px;
+}
+
+
+/* =========================
+   INTRODUCTION / PRINCIPLE
+========================= */
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.content-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    border: 1px solid #e5e7eb;
+}
+
+.card-icon {
+    width: 55px;
+    height: 55px;
+
+    background: #eaf4ff;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.content-card h2 {
+    margin-bottom: 15px;
+}
+
+.content-card p {
+    color: #64748b;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   CARE SECTION
+========================= */
+
+.care-section {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 35px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.section-title > span {
+    width: 55px;
+    height: 55px;
+
+    background: #eef7ff;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.section-title p {
+    color: #1677ff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.section-title h2 {
+    font-size: 25px;
+}
+
+.care-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.care-item {
+    display: flex;
+    gap: 15px;
+    padding: 18px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.care-item span {
+    min-width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #1677ff;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.care-item p {
+    color: #475569;
+    font-size: 14px;
+}
+
+
+/* =========================
+   SIMULATION PREVIEW
+========================= */
+
+.simulation-preview {
+    background: #1677ff;
+    color: white;
+
+    border-radius: 18px;
+    padding: 40px 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+}
+
+.preview-content {
+    max-width: 700px;
+}
+
+.simulation-label {
+    color: white;
+    opacity: 0.8;
+}
+
+.preview-content h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.preview-content p {
+    opacity: 0.9;
+    margin-bottom: 25px;
+}
+
+.preview-content button {
+    border: none;
+    background: white;
+    color: #1677ff;
+
+    padding: 14px 24px;
+    border-radius: 8px;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.preview-content button:hover {
+    transform: translateY(-2px);
+}
+
+.preview-icon {
+    font-size: 120px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .experiment-header h1 {
+        font-size: 34px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .care-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .simulation-preview {
+        padding: 30px;
+    }
+
+    .preview-icon {
+        display: none;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .experiment-container {
+        width: 92%;
+    }
+
+    .experiment-header h1 {
+        font-size: 28px;
+    }
+
+    .experiment-navbar {
+        padding: 0 4%;
+    }
+
+    .care-section,
+    .content-card {
+        padding: 25px;
+    }
+
+}

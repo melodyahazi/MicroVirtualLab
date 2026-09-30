@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | MicroVirtualLab</title>
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+    <!-- =================================
+         SIDEBAR
+    ================================== -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-logo">
+
+            <span>🔬</span>
+
+            <h2>
+                MicroVirtualLab
+            </h2>
+
+        </div>
+
+
+        <div class="student-info">
+
+            <div class="student-avatar"
+                 id="studentAvatar">
+
+                M
+
+            </div>
+
+
+            <div>
+
+                <h3 id="studentName">
+                    Student
+                </h3>
+
+                <p>
+                    Microbiology Student
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-menu">
+
+
+            <a href="#"
+               class="active">
+
+                <span>📊</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a href="#experiments">
+
+                <span>🧪</span>
+
+                Experiments
+
+            </a>
+
+
+            <a href="#progress">
+
+                <span>📈</span>
+
+                My Progress
+
+            </a>
+
+
+            <a href="#results">
+
+                <span>📋</span>
+
+                Results
+
+            </a>
+
+
+            <a href="#profile">
+
+                <span>👤</span>
+
+                Profile
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+
+            <a href="index.html">
+
+                <span>🏠</span>
+
+                Home
+
+            </a>
+
+
+            <a href="#"
+               onclick="logout()">
+
+                <span>🚪</span>
+
+                Logout
+
+            </a>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================
+             TOP BAR
+        ================================== -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <p class="welcome-small">
+
+                    STUDENT DASHBOARD
+
+                </p>
+
+
+                <h1>
+
+                    Welcome back,
+                    <span id="welcomeStudentName">
+                        Student
+                    </span>
+                    ! 👋
+
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-profile">
+
+
+                <div class="notification">
+
+                    🔔
+
+                </div>
+
+
+                <div class="profile-avatar"
+                     id="profileAvatar">
+
+                    M
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- =================================
+             STATISTICS
+        ================================== -->
+
+        <section class="statistics">
+
+
+            <!-- TOTAL EXPERIMENTS -->
+
+            <div class="stat-card">
+
+
+                <div class="stat-icon blue">
+
+                    🧪
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        Total Experiments
+                    </p>
+
+                    <h2>
+                        11
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- COMPLETED -->
+
+            <div class="stat-card">
+
+
+                <div class="stat-icon green">
+
+                    ✓
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        Completed
+                    </p>
+
+                    <h2 id="completedCount">
+
+                        0
+
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- AVERAGE -->
+
+            <div class="stat-card">
+
+
+                <div class="stat-icon orange">
+
+                    📊
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        Average Score
+                    </p>
+
+                    <h2 id="averageScore">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- BEST -->
+
+            <div class="stat-card">
+
+
+                <div class="stat-icon purple">
+
+                    🏆
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        Best Score
+                    </p>
+
+                    <h2 id="bestScore">
+
+                        --
+
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             QUICK START
+        ================================== -->
+
+        <section class="quick-start">
+
+
+            <div class="quick-content">
+
+
+                <p class="small-title">
+
+                    VIRTUAL LABORATORY
+
+                </p>
+
+
+                <h2>
+
+                    Ready for your next practical?
+
+                </h2>
+
+
+                <p>
+
+                    Start a virtual microbiology
+                    experiment and practice laboratory
+                    procedures in a safe environment.
+
+                </p>
+
+
+                <button
+                    onclick="startMicroscope()">
+
+                    Start Microscope Simulation →
+
+                </button>
+
+
+            </div>
+
+
+            <div class="quick-image">
+
+                🔬
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             EXPERIMENTS
+        ================================== -->
+
+        <!-- =================================
+     PART 1 — PRACTICAL EXPERIMENTS
+================================== -->
+
+<section
+    class="experiments-section practical-section"
+    id="experiments">
+
+
+    <!-- SECTION HEADER -->
+
+    <div class="section-header">
+
+        <div>
+
+            <p class="small-title">
+                PART 1 • PRACTICAL EXPERIMENTS
+            </p>
+
+            <h2>
+                🧪 Interactive Virtual Practicals
+            </h2>
+
+            <p class="section-description">
+                Perform interactive virtual microbiology
+                practicals and practice laboratory concepts
+                through simulated activities.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL INTRO -->
+
+    <div class="learning-category practical-category">
+
+        <div class="category-icon">
+            🔬
+        </div>
+
+        <div>
+
+            <h3>
+                Virtual Laboratory Practicals
+            </h3>
+
+            <p>
+                These four experiments provide interactive
+                virtual laboratory activities with simulated
+                equipment, actions, feedback and scoring.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL EXPERIMENTS -->
+
+    <div class="experiment-list">
+
+
+        <!-- =================================
+             EXPERIMENT 01
+        ================================== -->
+
+        <div class="dashboard-experiment practical-experiment">
+
+            <div class="experiment-icon">
+                🔬
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 01
+                </span>
+
+                <h3>
+                    Use and Handling of Microscope
+                </h3>
+
+                <p>
+                    Learn how to properly use and handle
+                    a laboratory microscope through an
+                    interactive virtual simulation.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        🔬 Interactive Practical
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Interactive
+                </span>
+
+                <button
+                    onclick="startMicroscope()">
+
+                    Start Simulation →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 02
+        ================================== -->
+
+        <div class="dashboard-experiment practical-experiment">
+
+            <div class="experiment-icon">
+                🧫
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 02
+                </span>
+
+                <h3>
+                    Aseptic Techniques
+                </h3>
+
+                <p>
+                    Explore aseptic technique concepts
+                    through an interactive virtual
+                    laboratory environment.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        🧫 Interactive Practical
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Interactive
+                </span>
+
+                <button
+                    onclick="startAseptic()">
+
+                    Start Simulation →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 03
+        ================================== -->
+
+        <div class="dashboard-experiment practical-experiment">
+
+            <div class="experiment-icon">
+                🧪
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 03
+                </span>
+
+                <h3>
+                    Cultivation of Bacteria
+                </h3>
+
+                <p>
+                    Explore bacterial cultivation and
+                    microbial growth through a safe
+                    virtual practical simulation.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        🧪 Interactive Practical
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Interactive
+                </span>
+
+                <button
+                    onclick="startCultivation()">
+
+                    Start Simulation →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 04
+        ================================== -->
+
+        <div class="dashboard-experiment practical-experiment">
+
+            <div class="experiment-icon">
+                🎨
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 04
+                </span>
+
+                <h3>
+                    Bacteria Stains and Staining
+                </h3>
+
+                <p>
+                    Explore bacterial staining concepts
+                    and interpretation through an
+                    interactive virtual simulation.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        🎨 Interactive Practical
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Interactive
+                </span>
+
+                <button
+                    onclick="startExperiment04()">
+
+                    Start Simulation →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     PART 2 — THEORY & QUESTIONS
+================================== -->
+
+<section
+    class="experiments-section theory-section"
+    id="theory">
+
+
+    <!-- SECTION HEADER -->
+
+    <div class="section-header">
+
+        <div>
+
+            <p class="small-title">
+                PART 2 • THEORY & QUESTIONS
+            </p>
+
+            <h2>
+                📚 Theory and Question Activities
+            </h2>
+
+            <p class="section-description">
+                Review microbiology concepts and test your
+                understanding through questions and answers.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- THEORY INTRO -->
+
+    <div class="learning-category theory-category">
+
+        <div class="category-icon">
+            📖
+        </div>
+
+        <div>
+
+            <h3>
+                Knowledge and Assessment
+            </h3>
+
+            <p>
+                These activities focus on theoretical
+                understanding, interpretation and
+                question-and-answer exercises.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- THEORY EXPERIMENTS -->
+
+    <div class="experiment-list">
+
+
+        <!-- =================================
+             EXPERIMENT 05
+        ================================== -->
+
+        <div class="dashboard-experiment theory-experiment">
+
+            <div class="experiment-icon">
+                🍽️
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 05
+                </span>
+
+                <h3>
+                    Microbial Analysis of Food Samples
+                </h3>
+
+                <p>
+                    Review concepts related to microbial
+                    analysis of food samples and answer
+                    assessment questions.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        📚 Theory & Questions
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Questions
+                </span>
+
+                <button
+                    onclick="startFoodAnalysis()">
+
+                    Start Questions →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 06
+        ================================== -->
+
+        <div class="dashboard-experiment theory-experiment">
+
+            <div class="experiment-icon">
+                🧫
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 06
+                </span>
+
+                <h3>
+                    Detection of Coliforms and
+                    Indicator Organisms
+                </h3>
+
+                <p>
+                    Review concepts related to coliforms
+                    and indicator organisms through
+                    question-and-answer activities.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        📚 Theory & Questions
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Questions
+                </span>
+
+                <button
+                    onclick="startColiform()">
+
+                    Start Questions →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 07
+        ================================== -->
+
+        <div class="dashboard-experiment theory-experiment">
+
+            <div class="experiment-icon">
+                🧪
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 07
+                </span>
+
+                <h3>
+                    Identification of Bacterial Species
+                    Through Biochemical Reactions
+                </h3>
+
+                <p>
+                    Review biochemical identification
+                    concepts and test your understanding
+                    using questions.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        📚 Theory & Questions
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Questions
+                </span>
+
+                <button
+                    onclick="startBacterialIdentification()">
+
+                    Start Questions →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 08
+        ================================== -->
+
+        <div class="dashboard-experiment theory-experiment">
+
+            <div class="experiment-icon">
+                💿
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 08
+                </span>
+
+                <h3>
+                    Sensitivity Testing
+                </h3>
+
+                <p>
+                    Review antimicrobial sensitivity-testing
+                    concepts through theoretical questions
+                    and answers.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        📚 Theory & Questions
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Questions
+                </span>
+
+                <button
+                    onclick="startSensitivityTesting()">
+
+                    Start Questions →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 09
+        ================================== -->
+
+        <div class="dashboard-experiment theory-experiment">
+
+            <div class="experiment-icon">
+                🍄
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 09
+                </span>
+
+                <h3>
+                    Microscopic Examination and
+                    General Morphology of Fungi
+                </h3>
+
+                <p>
+                    Review fungal morphology and
+                    microscopic examination concepts
+                    through questions.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        📚 Theory & Questions
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Questions
+                </span>
+
+                <button
+                    onclick="startFungalMicroscopy()">
+
+                    Start Questions →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 10
+        ================================== -->
+
+        <div class="dashboard-experiment theory-experiment">
+
+            <div class="experiment-icon">
+                🍄
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 10
+                </span>
+
+                <h3>
+                    Characteristics of Different
+                    Groups of Fungi
+                </h3>
+
+                <p>
+                    Learn about characteristics of fungal
+                    groups and test your knowledge through
+                    questions.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        📚 Theory & Questions
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Questions
+                </span>
+
+                <button
+                    onclick="startFungalGroups()">
+
+                    Start Questions →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             EXPERIMENT 11
+        ================================== -->
+
+        <div class="dashboard-experiment theory-experiment">
+
+            <div class="experiment-icon">
+                🧫
+            </div>
+
+
+            <div class="experiment-details">
+
+                <span class="experiment-number">
+                    EXPERIMENT 11
+                </span>
+
+                <h3>
+                    Enumeration of Fungi
+                    (Yeasts and Molds)
+                </h3>
+
+                <p>
+                    Review fungal enumeration concepts
+                    and test your understanding through
+                    questions and answers.
+                </p>
+
+
+                <div class="experiment-meta">
+
+                    <span>
+                        📚 Theory & Questions
+                    </span>
+
+                    <span>
+                        ⏱ 10–15 min
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="experiment-action">
+
+                <span class="status available">
+                    Questions
+                </span>
+
+                <button
+                    onclick="startEnumeration()">
+
+                    Start Questions →
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+        
+        <!-- =================================
+             PROGRESS
+        ================================== -->
+
+        <section
+            class="progress-section"
+            id="progress">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <p class="small-title">
+
+                        YOUR LEARNING
+
+                    </p>
+
+
+                    <h2>
+
+                        Practical Progress
+
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="progress-card">
+
+
+                <div class="progress-circle">
+
+                    <span id="progressPercent">
+
+                        0%
+
+                    </span>
+
+                </div>
+
+
+                <div class="progress-information">
+
+
+                    <h3 id="progressTitle">
+
+                        Start your first practical
+
+                    </h3>
+
+
+                    <p id="progressDescription">
+
+                        Complete your first simulation
+                        to begin tracking your progress.
+
+                    </p>
+
+
+                    <div class="progress-bar">
+
+
+                        <div
+                            class="progress-value"
+                            id="progressValue"
+                            style="width: 0%;">
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             RESULTS
+        ================================== -->
+
+        <section
+            class="results-section"
+            id="results">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <p class="small-title">
+
+                        PERFORMANCE
+
+                    </p>
+
+
+                    <h2>
+
+                        Recent Results
+
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+            <div
+                class="results-container"
+                id="resultsContainer">
+
+
+                <div
+                    class="empty-results"
+                    id="emptyResults">
+
+
+                    <div>
+
+                        📋
+
+                    </div>
+
+
+                    <h3>
+
+                        No results yet
+
+                    </h3>
+
+
+                    <p>
+
+                        Your completed practical
+                        results will appear here.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             PROFILE
+        ================================== -->
+
+        <section
+            id="profile"
+            class="profile-section">
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <p class="small-title">
+
+                        STUDENT PROFILE
+
+                    </p>
+
+
+                    <h2>
+
+                        Your Profile
+
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="profile-card">
+
+
+                <div class="profile-avatar-large"
+                     id="profileAvatarLarge">
+
+                    M
+
+                </div>
+
+
+                <div>
+
+
+                    <h3 id="profileStudentName">
+
+                        Student
+
+                    </h3>
+
+
+                    <p>
+
+                        Microbiology Student
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =================================
+     DASHBOARD JAVASCRIPT
+================================== -->
+
+<script src="js/dashboard.js"></script>
+
+
+</body>
+
+</html>

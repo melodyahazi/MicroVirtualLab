@@ -1,0 +1,556 @@
+/* =========================================
+   EXPERIMENT 03
+   CULTIVATION OF BACTERIA
+========================================= */
+
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+a,
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.experiment-navbar {
+    height: 72px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 20px;
+
+    color: #0f172a;
+}
+
+.brand span {
+    font-size: 27px;
+}
+
+.back-link {
+    text-decoration: none;
+
+    color: #2563eb;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.experiment-container {
+    width: 90%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 50px 0 70px;
+}
+
+
+/* =========================================
+   EXPERIMENT HEADER
+========================================= */
+
+.experiment-header {
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: 0 auto 35px;
+}
+
+.experiment-number {
+    color: #2563eb;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.experiment-header h1 {
+    color: #0f172a;
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.experiment-header p {
+    color: #64748b;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   EXPERIMENT CARD
+========================================= */
+
+.experiment-card {
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 14px;
+
+    padding: 28px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+
+/* =========================================
+   CARD HEADING
+========================================= */
+
+.card-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.card-icon {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 10px;
+
+    font-size: 22px;
+}
+
+.card-heading h2 {
+    color: #0f172a;
+
+    font-size: 23px;
+}
+
+
+/* =========================================
+   CARD TEXT
+========================================= */
+
+.experiment-card > p {
+    color: #475569;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MATERIALS GRID
+========================================= */
+
+.materials-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 12px;
+}
+
+.material-item {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    padding: 18px 10px;
+
+    text-align: center;
+
+    transition: 0.2s ease;
+}
+
+.material-item:hover {
+    border-color: #bfdbfe;
+
+    transform: translateY(-2px);
+}
+
+.material-item span {
+    display: block;
+
+    font-size: 27px;
+
+    margin-bottom: 8px;
+}
+
+.material-item p {
+    color: #475569;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   PROCEDURE LIST
+========================================= */
+
+.procedure-list {
+    padding-left: 24px;
+
+    color: #475569;
+}
+
+.procedure-list li {
+    padding-left: 8px;
+
+    margin-bottom: 13px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+.procedure-list li::marker {
+    color: #2563eb;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   SIMULATION CARD
+========================================= */
+
+.simulation-card {
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #ffffff
+        );
+
+    border: 1px solid #bfdbfe;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    box-shadow:
+        0 5px 18px rgba(37, 99, 235, 0.06);
+}
+
+.simulation-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 17px;
+}
+
+.simulation-icon {
+    width: 62px;
+
+    height: 62px;
+
+    border-radius: 14px;
+
+    background: #2563eb;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 31px;
+
+    flex-shrink: 0;
+}
+
+.simulation-label {
+    color: #2563eb;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 5px;
+}
+
+.simulation-content h2 {
+    color: #0f172a;
+
+    font-size: 21px;
+
+    margin-bottom: 6px;
+}
+
+.simulation-content p {
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   START BUTTON
+========================================= */
+
+.start-button {
+    border: none;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    padding: 14px 24px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.start-button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(37, 99, 235, 0.22);
+}
+
+.start-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   NOTICE CARD
+========================================= */
+
+.notice-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    padding: 18px 20px;
+}
+
+.notice-icon {
+    font-size: 20px;
+
+    margin-top: 1px;
+}
+
+.notice-card h3 {
+    color: #334155;
+
+    font-size: 14px;
+
+    margin-bottom: 5px;
+}
+
+.notice-card p {
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 950px) {
+
+    .materials-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .simulation-card {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .start-button {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .experiment-navbar {
+        padding: 0 4%;
+    }
+
+    .experiment-container {
+        width: 94%;
+
+        padding-top: 30px;
+    }
+
+    .experiment-header h1 {
+        font-size: 31px;
+    }
+
+    .experiment-card,
+    .simulation-card {
+        padding: 21px;
+    }
+
+    .materials-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .simulation-content {
+        align-items: flex-start;
+    }
+
+    .simulation-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 25px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .brand {
+        font-size: 17px;
+    }
+
+    .brand span {
+        font-size: 23px;
+    }
+
+    .back-link {
+        font-size: 12px;
+    }
+
+    .experiment-header h1 {
+        font-size: 27px;
+    }
+
+    .experiment-header p {
+        font-size: 14px;
+    }
+
+    .materials-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .material-item {
+        padding: 14px 8px;
+    }
+
+    .simulation-content {
+        flex-direction: column;
+    }
+}
