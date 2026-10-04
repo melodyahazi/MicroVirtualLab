@@ -720,6 +720,8 @@ function saveResult(score) {
 
         studentName: studentName,
 
+        experimntNumber: 7,
+
         experiment:
             "Identification of Bacterial Species Through Biochemical Reactions",
 

@@ -633,6 +633,8 @@ function saveResult(percentage) {
 
         studentName: studentName,
 
+        experimentNumber: 9,
+
         experiment:
             "Microscopic Examination and General Morphology of Fungi",
 
